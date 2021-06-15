@@ -1,0 +1,21 @@
+This to cover:
+explanation of user onboarding
+
+cms registration flow
+blanket pricing flow
+hashcode flow
+
+
+
+
+blanket pricing
+
+
+signIn url
+translucency block
+
+
+---
+
+explain how to make payments in sandbox
+explain difference between sandbox and live
