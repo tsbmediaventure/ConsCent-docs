@@ -1,12 +1,14 @@
 # ConsCent Docs
 
-### Before you begin integrating
+### Before you begin
 
 You must have contacted or been contacted by the ConsCent team and have access to your ConsCent Dashboard.
 
 Your clientId, API_KEY and API_SECRET are available in the dashboard in the SDK integration section. (Present on the sidebar)
 
 NEVER expose your API_SECRET. Do NOT use it in the frontend-side of your website.
+
+_Please note that this is the developer documentation, for information on making requests to ConsCent APIs, please consult the [API documentation](https://tsbmediaventure.github.io/developer-docs/)_
 
 ### Table of Contents
 
