@@ -1,7 +1,7 @@
 ## Integration on AMP Pages
 
 Since custom javascript isn't allowed on AMP Pages, and you cannot directly include the web-sdk on AMP pages, there is a slightly different integration process for AMP Pages.
-This involves adding a few tags to your AMP pages based on your method of integration on AMP Pages.
+This involves adding a few tags to your AMP pages based on your method of integration.
 
 _As of now AMP integration only works with the content registration method_
 
@@ -14,7 +14,7 @@ Both methods are very similar except the dynamic method requires you to register
 
 ### How to Integrate
 
-Please check the example.html and example-dynamic.html to view full html pages
+**Please check the [amp-example.html](amp-example.html) and [amp-example-dynamic.html](amp-example-dynamic.html) to view full html pages**
 
 0. **(Dynamic mode only)** When registering content on ConsCent via API calls, include the premium html of your content in the 'ampContent' field.
 
