@@ -60,18 +60,22 @@ https://razorpay.com/docs/payment-gateway/test-card-upi-details/
 ### URLs List
 
 API_URL is the base for all API requests to ConsCent.
-SDK_URL is the URL offrontend of your application
+SDK_URL is the URL of the web SDK usually included in your website
+FRONTEND_URL is the URL of the ConsCent user dashboard (only used in some cases)
+
 These differ according to your environment.
 
 ##### Sandbox:
 
 API_URL: https://sandbox-api.conscent.in
-SDK_URL: https://sandbox-sdk.conscent.in
+SDK_URL: https://sandbox-sdk.conscent.in'
+FRONTEND_URL: https://sandbox-user.conscent.in
 
 ##### Production:
 
 API_URL: https://api.conscent.in
 SDK_URL: https://sdk.conscent.in
+FRONTEND_URL: https://user.conscent.in
 
 ### Working with APIs
 
