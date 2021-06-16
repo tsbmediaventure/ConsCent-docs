@@ -23,7 +23,7 @@ _Please note that this is the developer documentation, for information on making
   - Content registration
   - Blanket pricing
   - Hashcode based integration
-- AMP Support
+- [AMP Support])(./amp.md)
 - Pricing strategies
   - International Pricing
   - Different price in India and abroad
