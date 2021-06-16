@@ -24,7 +24,7 @@ Both methods are very similar except the dynamic method requires you to register
     <script id="amp-access" type="application/json">
       {
         "authorization": "{API_URL}/api/v1/content/amp?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)",
-        "login": "{FRONTEND_URL}/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)",
+        "login": "{FRONTEND_URL}/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)&returnUrl=RETURN_URL",
         "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
         "authorizationFallbackResponse": { "granted": true },
         "noPingback": true
