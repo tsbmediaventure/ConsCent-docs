@@ -10,8 +10,6 @@ NEVER expose your API_SECRET. Do NOT use it in the frontend-side of your website
 
 _Please note that this is the developer documentation, for information on making requests to ConsCent APIs, please consult the [API documentation](https://tsbmediaventure.github.io/developer-docs/)_
 
-[AMP Support])(amp.md)
-
 ### Table of Contents
 
 - Getting started
@@ -25,7 +23,7 @@ _Please note that this is the developer documentation, for information on making
   - Content registration
   - Blanket pricing
   - Hashcode based integration
-- [AMP Support])(amp.md)
+- [AMP Support](amp.md)
 - Pricing strategies
   - International Pricing
   - Different price in India and abroad
