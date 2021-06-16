@@ -14,7 +14,7 @@ Both methods are very similar except the dynamic method requires you to register
 
 ### How to Integrate
 
-**Please check the [amp-example.html](amp-example.html) and [amp-example-dynamic.html](amp-example-dynamic.html) to view full html pages**
+**Please check the [amp-example.html](../amp/amp-example.html) and [amp-example-dynamic.html](../amp/amp-example-dynamic.html) to view full html pages**
 
 0. **(Dynamic mode only)** When registering content on ConsCent via API calls, include the premium html of your content in the 'ampContent' field.
 
