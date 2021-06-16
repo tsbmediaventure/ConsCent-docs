@@ -67,19 +67,19 @@ These differ according to your environment.
 
 ##### Sandbox:
 
-API_URL: https://sandbox-api.conscent.in
-SDK_URL: https://sandbox-sdk.conscent.in'
+API_URL: https://sandbox-api.conscent.in  
+SDK_URL: https://sandbox-sdk.conscent.in  
 FRONTEND_URL: https://sandbox-user.conscent.in
 
 ##### Production:
 
-API_URL: https://api.conscent.in
-SDK_URL: https://sdk.conscent.in
+API_URL: https://api.conscent.in  
+SDK_URL: https://sdk.conscent.in  
 FRONTEND_URL: https://user.conscent.in
 
 ### Working with APIs
 
-The API Specification can be found here:
+The API Specification can be found here:  
 https://tsbmediaventure.github.io/developer-docs
 
 It outlines all the APIs available to you and how to authenticate for the same.
