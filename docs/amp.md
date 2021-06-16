@@ -16,7 +16,7 @@ Both methods are very similar except the dynamic method requires you to register
 
 Please check the example.html and example-dynamic.html to view full html pages
 
-0. When registering content on ConsCent via API calls, include the premium html of your content in the 'ampContent' field. _Dynamic mode only_
+0. When registering content on ConsCent via API calls, include the premium html of your content in the 'ampContent' field. **Dynamic mode only**
 
 1. Include the amp access tag in your AMP page
 
