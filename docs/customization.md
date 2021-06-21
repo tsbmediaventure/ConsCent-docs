@@ -12,6 +12,10 @@ There are two main screens available which completely modify the appearance of y
 This is the screen included by default but will soon be replaced by the beta screen
 This is the black/grey and white screen with a black border.
 
+<p align="center">
+  <img src="../media/default_paywall.png" height="270" title="Default Screen">
+</p>
+
 ### Beta screen
 
 To opt into the beta screen please pass the parameter 'screenType' with the value of 'beta'.
@@ -24,7 +28,7 @@ e.g. Your initialization object should include these parameters:
 ```
 
 <p align="center">
-  <img src="../media/beta_paywall.png" width="350" title="Beta Screen">
+  <img src="../media/beta_paywall.png" height="270" title="Beta Screen">
 </p>
 
 ## Action words
@@ -40,6 +44,10 @@ The paywall by default is embedded in a div on your website. If you want the pay
 ```
   fullScreenMode: true,
 ```
+
+<p align="center">
+  <img src="../media/fullscreen_paywall.png" height="320" title="Beta Screen">
+</p>
 
 ## Button Mode
 
