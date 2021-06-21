@@ -23,6 +23,16 @@ e.g. Your initialization object should include these parameters:
   accentColor: '#ff0000',
 ```
 
+<p align="center">
+  <img src="../media/beta_paywall.png" width="350" title="Beta Screen">
+</p>
+
+## Action words
+
+Your paywall will contain words like 'Read Now', 'Unlock Now', 'Watch now'. This action word depends on the contentType, which you can find out about in the API docs if you follow content registrations
+
+If you have only one type of content, you can request for your content type to be changed -- e.g. if you have podcasts, you might want 'Listen Now' instead.
+
 ## Fullscreen Mode
 
 The paywall by default is embedded in a div on your website. If you want the paywall to cover the entire screen instead, you can pass in the following parameter
