@@ -31,6 +31,18 @@ The paywall by default is embedded in a div on your website. If you want the pay
   fullScreenMode: true,
 ```
 
+## Button Mode
+
+If you pass the following parameter, ConsCent reduces in form factor to a simple button.
+
+```
+  buttonMode: true,
+```
+
+You can control the styling of the button by passing your custom css styles as json in your client dashboard under the paywall settings section
+
+**Note: this is not compatible with fullscreen mode**
+
 ## Misc Options
 
 These options will partially modify the appearance of the paywall.
@@ -45,7 +57,7 @@ subscriptionUrl: 'https://your-subscription-page.com',
 
 Doing will add a subscription button section to the paywall
 
-** You can customize the subscription text shown on the paywall by changing it in the client dashboard under the paywall settings section**
+**You can customize the subscription text shown on the paywall by changing it in the client dashboard under the paywall settings section**
 
 ### Sign-in url
 
@@ -63,15 +75,3 @@ If you want conscent to cover a dom element in your website when the user hasn't
 ```
   translucencyId: 'id-of-your-element',
 ```
-
-### Button Mode
-
-If you pass the following parameter, ConsCent reduces in form factor to a simple button.
-
-```
-  buttonMode: true,
-```
-
-You can control the styling of the button by passing your custom css styles as json in your client dashboard under the paywall settings section
-
-**Note: this is not compatible with fullscreen mode**
