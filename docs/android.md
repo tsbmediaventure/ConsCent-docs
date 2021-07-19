@@ -137,5 +137,3 @@ Parameters detail
 
 In you onActivityResult method, pass below line of code:
 Conscent.handledIntent()
-
-======================End======================
