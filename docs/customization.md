@@ -93,3 +93,18 @@ If you want conscent to cover a dom element in your website when the user hasn't
 ```
   translucencyId: 'id-of-your-element',
 ```
+
+## FAB Positioning
+
+If the ConsCent floating action button (FAB) positioning conflicts with some other element on your website, please pass the following parameters which control the positioning of the FAB to the ConsCent initialization function
+
+```
+{
+...(other variables)
+  fabTop: '80%',
+  fabTopMobile: '80%',
+}
+```
+
+fabTop is the absolute positioning of the fab on desktop & fabTopMobile is the same for mobile users.
+The value can be any valid css value for absolute positioning (which will be applied to the 'top' attribute)
