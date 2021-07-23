@@ -35,6 +35,7 @@ _Please note that this is the developer documentation, for information on making
   - Translucency
   - Button Mode
 - [Webhooks](webhook.md)
+- [Analytics](analytics.md)
 
 ### Getting Started
 
