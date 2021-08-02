@@ -14,8 +14,16 @@ The steps involved in this flow are:
 
 #### Paywall Initialization
 
+We completely replace the contents of an empty div, please pass the id of an empty div tag with nothin else in it, positioned wherever you require.
+Pass the id of the div as wrappingElementId
 #### Validation & Unlocking
 
 ## Hashcode Method
+Will be updated shortly.
 
-## Content Registration
+## Blanket Pricing
+
+
+---
+
+Notes
