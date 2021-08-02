@@ -29,14 +29,15 @@ Parameters detail can be checked below for more information.
 CCplugin.shared.showPayWall(contentID: contentID!, viewLayout: ViewLayoutInfo(vc: self, view: webView), delegate: self,,subscriberDelegate:CCPluginSubscribeBtnTapDelegate? = nil,signInDelegate:CCPluginSignBtnTapDelegate? = nil)
 
 Parameters detail:-
+
 - contentID: This will be your article or content id for which detail needs to be checked.
 
 - ViewLayoutInfo : This is a struct which has 2 values vc and view , pass the view on which you are going to show your content and vc(View controller) in which the view is present
 - delegate: This will be used handle the success and failure cases , pass the class as the delegate where you want to handle success or Failure ,this delegate is of the protocol CCPluginCompletionHandlerDelegate which has 2 methods success and failure which will be triggered in case of success and failure of the process
 - success: This is the success callback which will get called for every successfull processing.The method success will be triggered in this case in your delegate class
 - failure: This is the failure callback which will get called for every failed processing. The method failure will be triggered in this case in the your delegate class
-  *subscriberDelegate This is a optional callback which will be called if you pass your class as it's delegate ,It will be triggred When the subscription button is taped but if you don't pass in your delegate it will not show the subscription view
-  *signInDelegate This is a optional callback which will be called if you pass your class as it's delegate ,It will be triggred When the signIn button is taped , but if you don't pass in your delegate it will not show the Signin view
+- subscriberDelegate This is a optional callback which will be called if you pass your class as it's delegate ,It will be triggred When the subscription button is taped but if you don't pass in your delegate it will not show the subscription view
+- signInDelegate This is a optional callback which will be called if you pass your class as it's delegate ,It will be triggred When the signIn button is taped , but if you don't pass in your delegate it will not show the Signin view
 
 ## Step-4 Final Touches
 
