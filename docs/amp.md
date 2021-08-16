@@ -43,29 +43,62 @@ Please get the value or API_URL and FRONTEND_URL from the urls section of the Re
 
 ````
     <div amp-access="NOT granted" amp-access-hide>
-      <div
-        on="tap:amp-access.login"
-        style="
-          color: green;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: black;
-          color: white;
-          font-size: 23px;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-          margin: 4px;
-          padding: 8px;
-          cursor: pointer;
-        "
-      >
-        <a>Unlock the full article now!</a>
-      </div>
+      <template amp-access-template type="amp-mustache">
+        <div class="csc-wrapper">
+          <div class='csc-container'>
+            <div class='csc-header-main'>
+              Now pay only for what you want!
+            </div>
+            <div class='csc-content'>
+              <div class='csc-left-col'>
+                <div class='csc-heading-wrap'>
+                  <div class='csc-small-sub-heading'>
+                    This is a Premium Story
+                  </div>
+                  <div class='csc-heading '>
+                    Pay {{contentPrice}} to Read now
+                  </div>
+                  <div>
+                    {{#userBalance}}
+                    <div class='csc-balance'>ConsCent Balance: {{userBalance}}</div>
+                    {{/userBalance}}
+                  </div>
+                </div>
+                <div style='display: flex ;justify-content:center'>
+                  <button class="csc-button" on="tap:amp-access.login">Read Now </button>
+                </div>
+                <span class='csc-powered-by'>
+                  Pay with
+                  <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png' height="10" width="63.33"/>
+                </span>
+                <div style="margin-top: 16px;">
+                  Once paid, this story is free for {{duration}} days
+                </div>
+              </div>
+              <div class='csc-middle-col '>
+                <div class='csc-vertical-line '>
+                  <div class='csc-or-write '>OR</div>
+                </div>
+              </div>
+              <div class='csc-right-col '>
+                <div class="csc-subscribe-title-container">
+                  <div class="csc-subscribe-title">
+                    For unlimited access to all the articles
+                  </div>
+                </div>
+                
+                <div style='display: flex ;justify-content:center'>
+                  <button class="csc-subscribe-button">Subscribe Now </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
-    ```
 ````
 
-Please note that only the outer div is important, you should design your own 'unlock / read more' tag within the outer div. A placeholder design has been included in the above code.
+Please note that you  must modify the code to handle the subscription button tap or you may remove the subscription button bit altogether
 
 3. Place your premium content within the following tag
 
