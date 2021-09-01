@@ -62,4 +62,15 @@ _csc('init-donation', {
 
 #### Android / iOS Integration
 
-- Coming soon
+1. You need to design a pop-up or a callout for the user to click on to initate the donation. Something similar to the image below is advisable
+
+<p align="center">
+  <img src="../media/beta_paywall.png" height="270" title="Beta Screen">
+</p>
+
+2. When the user has clicked, [create a donation as outlined here.](https://tsbmediaventure.github.io/developer-docs/#donations) Make sure to include a deeplink for the user to return to the app when his donation process ends.
+
+3. Use the donation id return in the donation creation call and redirect the user to the default browser (not in-app browser!) to this url: {URL}/donation?donationId={donationId}
+
+Here {URL} is `https://user.conscent.in/` for production and `https://sandbox-user.conscent.in/` for sandbox mode.
+{donationId} is the donationId return from the create donation endpoint

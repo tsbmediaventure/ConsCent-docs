@@ -8,6 +8,8 @@ Your clientId, API_KEY and API_SECRET are available in the dashboard in the SDK 
 
 NEVER expose your API_SECRET. Do NOT use it in the frontend-side of your website.
 
+If you are only interested in receiving donations from users, you can read about [accepting donations here](donations.md)
+
 _Please note that this is the developer documentation, for information on making requests to ConsCent APIs, please consult the [API documentation](https://tsbmediaventure.github.io/developer-docs/)_
 
 ### Table of Contents
@@ -36,6 +38,7 @@ _Please note that this is the developer documentation, for information on making
   - Button Mode
 - [Webhooks](webhook.md)
 - [Analytics](analytics.md)
+- [Donations](donations.md)
 
 ### Getting Started
 
