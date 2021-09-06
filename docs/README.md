@@ -62,7 +62,7 @@ The easiest way to make a fake payment is to choose netbanking, any bank and pro
 
 https://razorpay.com/docs/payment-gateway/test-card-upi-details/
 
-### URLs List
+### URLs
 
 API_URL is the base for all API requests to ConsCent.
 SDK_URL is the URL of the web SDK usually included in your website
@@ -114,6 +114,6 @@ There are three main ways to integrate ConsCent.
 
 1. Content registration - This method gives you control over the price for each content. For this to work, your CMS needs to make API calls to register metadata on each priced content to ConsCent's backend servers.
 2. Blanket pricing - This method is useful for a quick proof of concept or if you have very limited control over your backend/cms
-3. Hashcode registration - Similar to content registration flow, useful if you are not able to make API calls from your backend/CMS. Content meta-data is securely hashed before-hand and then the hashed code is used to initialize the paywall client side.
+3. Hashcode registration - Similar to content registration flow, useful if you are not able to make API calls from your backend/CMS. Content meta-data is securely hashed before-hand and then the hashed code is used to initialize the paywall client side. This method is not currently supported on Android/iOS and AMP pages.
 
-You can find detailed instructions in specific pages for each method.
+You can find detailed instructions in integration page for each method.
