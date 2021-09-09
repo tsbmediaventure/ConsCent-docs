@@ -10,4 +10,6 @@ To create a pass, please go to the manage passes page in the integration section
 
 You can skip any CMS / Backend related steps written in the [integration page.](integration.md)
 
+**To make sure passes work, your blanket pricing default value must be a non-zero value**
+
 You only need to do the frontend-related steps to initalize the paywall.
