@@ -4,6 +4,8 @@ All integration processes are divided in 2 segments, one segment is in your back
 
 If only want to use the passes feature, you do not need to use hashcode method or content registration. You can directly skip to the web / frontend integration. You will however have to configure a pass in the integration section of your client dashboard. [Check out passes here](passes.md)
 
+Additionally, if you want to microprice pdf downloads or unlock a group of contents together check out [downloads](features/downloads.md) and [bundling](features/bundling.md)
+
 At this point, you must also have access to your client id, api key and api secret (it is obtained by going to your your client dashboard > Integration > SDK)
 
 ## Content Registration
