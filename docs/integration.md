@@ -2,6 +2,8 @@
 
 All integration processes are divided in 2 segments, one segment is in your backend/CMS and the other is on your frontend. Your frontend can be a website, a mobile application or an AMP page. The AMP, and mobile integrations are covered in their respective pages and the web initialization is covered in the concepts section on this page.
 
+If only want to use the passes feature, you do not need to use hashcode method or content registration. You can directly skip to the web / frontend integration. You will however have to configure a pass in the integration section of your client dashboard. [Check out passes here](passes.md)
+
 At this point, you must also have access to your client id, api key and api secret (it is obtained by going to your your client dashboard > Integration > SDK)
 
 ## Content Registration
@@ -73,7 +75,7 @@ Integration steps: -
        csc('init', {
          contentId: {contentId},
          clientId: {clientId},
-         title: {contentTitle}, // mandatory for blanket pricing
+         title: {contentTitle},
          successCallback: yourSuccessCallbackFunction,
          debug: true,
          wrappingElementId: 'csc-paywall',
