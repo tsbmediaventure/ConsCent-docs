@@ -6,4 +6,4 @@ If you want to sell different pieces of micro-priced premium content in a bundle
    (all parameters and exact API details are available in the API documentation website)
    https://tsbmediaventure.github.io/developer-docs/#client-content-bundles
 
-2. When initializing the paywall on your webpage [as outlined here](integration.md#Concepts), instead of contentId, pass the contentBundleId of the bundle you created.
+2. When initializing the paywall on your webpage [as outlined here](../integration.md#Concepts), instead of contentId, pass the contentBundleId of the bundle you created.
