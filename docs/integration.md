@@ -21,11 +21,12 @@ At this point, you must also have access to your client id, api key and api secr
 
 ## Hashcode Method
 
-Follow all steps in the Content Registration flow, except you do not need to make a create / update call when paid content is modified. Instead, you must generate a hash on the fly and pass it to your frontend website. This hash will contain all information about the content in a signed format. (JWT)
+Follow all steps in the Content Registration flow, except you do not need to make a create / update call when paid content is created or modified. Instead, you must generate a hash on the fly and pass it to your frontend website. This hash will contain all information about the content in a signed format. (JWT)
+This method avoids the trouble of having to register all your existing premium content.
 
 Integration steps: -
 
-1. Include all details of the post request body that is used for creating the content (as shown here https://tsbmediaventure.github.io/developer-docs/#create-content) in a variable, say contentDetails.
+1. Include all details of the post request body that is used for creating the content (as shown here https://tsbmediaventure.github.io/developer-docs/#create-content) in a an object (POJO-like object), lets say the object is named contentDetails.
 
 2. Use any jwt library and sign the contentDetails object with your client secret. The generated hash is the hashcode required by conscent. **Make sure you never leak your client secret to your frontend website**
 
