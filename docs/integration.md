@@ -25,7 +25,7 @@ Follow all steps in the Content Registration flow, except you do not need to mak
 
 Integration steps: -
 
-1. Include all details of the post request body that you have used for creating the content (as shown here https://tsbmediaventure.github.io/developer-docs/#create-content) in a variable, say contentDetails.
+1. Include all details of the post request body that is used for creating the content (as shown here https://tsbmediaventure.github.io/developer-docs/#create-content) in a variable, say contentDetails.
 
 2. Use any jwt library and sign the contentDetails object with your client secret. The generated hash is the hashcode required by conscent. **Make sure you never leak your client secret to your frontend website**
 
