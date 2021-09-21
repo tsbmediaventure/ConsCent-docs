@@ -39,6 +39,7 @@ _Please note that this is the developer documentation, for information on making
 - [Webhooks](webhook.md)
 - [Analytics](analytics.md)
 - [Donations](donations.md)
+- [Tagging](tagging.md)
 
 ### Getting Started
 
