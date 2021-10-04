@@ -99,7 +99,7 @@ Please get the value or API_URL and FRONTEND_URL from the urls section of the Re
 ````
 
 Please note that you  must modify the code to handle the subscription button tap or you may remove the subscription button bit altogether
-**You must also include CSS for the above ConsCent paywall on your amp page** Include the following CSS block in a style tag on your page:
+**You must also include CSS for the above ConsCent paywall on your amp page.** Include the following CSS block in a style tag on your page:
 
 ```
     .csc-wrapper {
