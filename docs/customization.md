@@ -94,17 +94,19 @@ If you want conscent to cover a dom element in your website when the user hasn't
   translucencyId: 'id-of-your-element',
 ```
 
-## FAB Positioning
+## CSC - Icon Positioning
 
-If the ConsCent floating action button (FAB) positioning conflicts with some other element on your website, please pass the following parameters which control the positioning of the FAB to the ConsCent initialization function
+After content is unlocked on the web, a conscent icon is visible to the user. The positioning of this icon can be controlled.
+It can be positioned on the bottom of the webpage or the right of the webpage, and its exact position can be controlled via the following parameters
 
 ```
 {
 ...(other variables)
-  fabTop: '80%',
-  fabTopMobile: '80%',
+  CSCIconPosition: 'bottom',
+  CSCIconOffset: '80%',
 }
 ```
 
-fabTop is the absolute positioning of the fab on desktop & fabTopMobile is the same for mobile users.
-The value can be any valid css value for absolute positioning (which will be applied to the 'top' attribute)
+CSCIconPosition positions the icon to the right or to the bottom of the browser, the possible values for this variable are 'bottom' or 'right'.
+
+CSCIconOffset's value can be any valid css value (e.g. '10px' or '50%') which will set the distance of the icon from the edge of the browser window.

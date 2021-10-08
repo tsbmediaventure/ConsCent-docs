@@ -89,8 +89,8 @@ Integration steps: -
          buttonMode: false,
          fullScreenMode: 'false',
          translucencyId:'id-translucency',
-         fabTop: '72%',
-         fabTopMobile: '72%',
+         CSCIconPosition: 'right',
+         CSCIconOffset: '72%',
          hashCode: 'your-hashcode', // mandatory if using hashcode flow
        })
        ```
@@ -121,9 +121,9 @@ Integration steps: -
 
        - 'translucencyId' if you would like ConsCent to hide/unhide an element on your page with a translucent overlay (frontend-only). Set the id of that element as the value of translucencyId
 
-       - 'fabTop' in case you want to reposition the conscent action button position which appears when a story is unlocked, please pass a percentage value of the distance from the top of the screen, e.g. '64%'
+       - 'CSCIconPosition' positions the icon to the right or to the bottom of the browser, the possible values for this variable are 'bottom' or 'right'.
 
-       - 'fabTopMobile' similar to fabTop, but it only affect mobile devices.
+       - 'CSCIconOffset's value can be any valid css value (e.g. '10px' or '50%') which will set the distance of the icon from the edge of the browser window.
 
        - 'hashCode' if using hashcode method of registration you need to pass your generated and signed hash in this field.
 
