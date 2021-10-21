@@ -92,6 +92,8 @@ Integration steps: -
          CSCIconPosition: 'right',
          CSCIconOffset: '72%',
          hashCode: 'your-hashcode', // mandatory if using hashcode flow
+         adBlockOnly: false,
+         hiddenElemId: '',
        })
        ```
 
@@ -126,6 +128,10 @@ Integration steps: -
        - 'CSCIconOffset's value can be any valid css value (e.g. '10px' or '50%') which will set the distance of the icon from the edge of the browser window.
 
        - 'hashCode' if using hashcode method of registration you need to pass your generated and signed hash in this field.
+
+       - 'adBlockOnly' works exclusively with the hiddenElemId field, if true, the paywall will only load when the user has enabled his ad-blocker
+
+       - 'hiddenElemId' If you want ConsCent to unhide a DOM element with display: none property on it when the user unlocks the content, you can pass the 'id' of the DOM element in this property.
 
     3. successCallback and validation
 
