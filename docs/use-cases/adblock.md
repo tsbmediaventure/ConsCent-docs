@@ -63,4 +63,4 @@ Run the following code in the page of your premium article.
 
 Make sure you substitute the contentId, clientId and title!
 
-An explanation of these parameters is outlined in [integrations](integration.md#Concepts). If you would like to use other parameters you can review them too.
+An explanation of these parameters is outlined in [integrations](../integration.md#Concepts). If you would like to use other parameters you can review them too.
