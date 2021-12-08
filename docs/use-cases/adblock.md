@@ -30,8 +30,8 @@ Second step is to include the sdk in the header of your html page.
 
 - Replace {replace_with_sdk_url} with
 
-  - 'https://sandbox-sdk.conscent.in' for sandbox (test mode)
-  - 'https://sdk.conscent.in' for production
+  - 'https://sandbox-sdk.conscent.in/csc-sdk.js' for sandbox (test mode)
+  - 'https://sdk.conscent.in/csc-sdk.js' for production
 
 - Replace {replace_with_clientId} with your clientId which can be found in your client dashboard
 

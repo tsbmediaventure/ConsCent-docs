@@ -74,13 +74,13 @@ These differ according to your environment.
 ##### Sandbox:
 
 API_URL: https://sandbox-api.conscent.in  
-SDK_URL: https://sandbox-sdk.conscent.in  
+SDK_URL: https://sandbox-sdk.conscent.in/csc-sdk.js
 FRONTEND_URL: https://sandbox-user.conscent.in
 
 ##### Production:
 
 API_URL: https://api.conscent.in  
-SDK_URL: https://sdk.conscent.in  
+SDK_URL: https://sdk.conscent.in/csc-sdk.js
 FRONTEND_URL: https://user.conscent.in
 
 ### Working with APIs

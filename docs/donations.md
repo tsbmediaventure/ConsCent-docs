@@ -30,8 +30,8 @@
 
 - Replace clientId with the clientId available to you in integration section of the client dashboard
 - Replace {SDK_URL} with
-  - 'https://sandbox-sdk.conscent.in' for sandbox (test mode)
-  - 'https://sdk.conscent.in' for production
+  - 'https://sandbox-sdk.conscent.in/csc-sdk.js' for sandbox (test mode)
+  - 'https://sdk.conscent.in/csc-sdk.js' for production
 
 2. When you and the donation window to appear, initialize conscent donation with the following snippet after replacing the variable values or omitting the variables you don't need:
 
