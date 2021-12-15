@@ -47,3 +47,58 @@ You can register your webhook endpoint for receiving ConsCent user data by loggi
   }
 }
 ```
+
+## Subscription Payment Webhook
+
+You can register your webhook endpoint for receiving ConsCent purchased subscription data by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's purchased subscription data anytime the user purchases a subscription on the client's platform or application via ConsCent. Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint. 
+
+> The webhook returns a JSON in the request body - structured like this:
+
+```json
+{
+  "_id": "61b9cf42f5d1f54797aaf14f",
+  "renewSubscription": false,
+  "availedOffers": [],
+  "promotional": false,
+  "tags": [],
+  "bundle": false,
+  "bundleContentIds": [],
+  "paymentType": ["NETWORK"],
+  "freeTrial": false,
+  "migrated": false,
+  "userAccount": "61b9cefbf5d1f54797aaf149",
+  "clientId": "601a8ea4f2149f089782814f",
+  "buyingPrice": 289.5,
+  "price": 300,
+  "country": "IN",
+  "city": "bengaluru (nagashettyhalli)",
+  "location": {
+    "latitude": 13.0411,
+    "longitude": 77.5702,
+    "postcode": "560056"
+  },
+  "userCountry": "IN",
+  "expiryDate": "2022-05-15T11:19:30.897Z",
+  "priceDetails": {
+    "price": 300,
+    "currency": "INR"
+  },
+  "type": "SUBSCRIPTION",
+  "subscriptionTitle": "Subscription 5",
+  "device": "desktop",
+  "subscriptionType": {
+    "physical": false,
+    "digital": true
+  },
+  "subscriptionId": "616ffd76621d69c5ee43c044",
+  "createdAt": "2021-12-15T11:19:30.914Z",
+  "updatedAt": "2021-12-15T11:19:30.914Z",
+  "chosenTier": {
+    "clientTierId": "Test Tier ID",
+    "_id": "616ffd76621d69c5ee437485",
+    "price": 300,
+    "duration": 5,
+    "currency": "INR"
+  }
+}
+```
