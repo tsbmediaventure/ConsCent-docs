@@ -43,7 +43,7 @@
             "loggedIn": true
         }
 
-    Example userDetailsCallback argument for Logged In User:
+    Example userDetailsCallback argument for Not Logged In User:
 
         {
             "loggedIn": false,
