@@ -39,12 +39,13 @@
             "country": "IN",
             "promotionalOptIn": true,
             "lastPurchasedOn": "2021-12-15T11:19:30.942Z"
-            "userDetailsMatch": true
+            "userDetailsMatch": true,
+            "loggedIn": true
         }
 
     Example userDetailsCallback argument for Logged In User:
 
         {
-            "message": "User not logged in",
+            "loggedIn": false,
             "userDetailsMatch": false
         }
