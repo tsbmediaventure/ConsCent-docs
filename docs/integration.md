@@ -94,8 +94,8 @@ Integration steps: -
          hashCode: 'your-hashcode', // mandatory if using hashcode flow
          adBlockOnly: false,
          hiddenElemId: '',
-         phoneNumber: '9898989898',
-         email: 'test@email.com'
+         defaultPhone: '9898989898',
+         defaultEmail: 'test@email.com'
        })
        ```
 
@@ -135,9 +135,9 @@ Integration steps: -
 
        - 'hiddenElemId' If you want ConsCent to unhide a DOM element with display: none property on it when the user unlocks the content, you can pass the 'id' of the DOM element in this property.
 
-       - 'phoneNumber' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
+       - 'defaultPhone' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
 
-       - 'email' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
+       - 'defaultEmail' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
 
     3. successCallback and validation
 
