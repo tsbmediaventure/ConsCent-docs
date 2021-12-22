@@ -106,6 +106,8 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
   "subscriptionId": "616ffd76621d69c5ee43c044",
   "createdAt": "2021-12-15T11:19:30.914Z",
   "updatedAt": "2021-12-15T11:19:30.914Z",
+  "userEmail": "test@email.com",
+  "userPhoneNumber": "9999999999",
   "chosenTier": {
     "clientTierId": "Test Tier ID",
     "_id": "616ffd76621d69c5ee437485",
