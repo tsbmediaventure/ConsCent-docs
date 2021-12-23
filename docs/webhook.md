@@ -42,6 +42,7 @@ Alternately, you can check the authorization headers. Every request to the webho
   },
   "clientTierId": "TestTierID1"
 }
+````
 
 Do note that you will receive either the phoneNumber or the email depending on what the user chooses to log in with.
 
