@@ -1,6 +1,6 @@
 # Webhooks
 
-## User Data Webhook
+## Sign up Webhook
 
 You can register your webhook endpoint for receiving ConsCent user data by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user data anytime the user logins in for the first time on the client's website or application via ConsCent.
 
