@@ -42,7 +42,7 @@
          debug: true,
          wrappingElementId: 'csc-paywall',
          // Following fields are optional
-        url: {contentUrl},
+         contentUrl: {contentUrl},
          defaultPhone: '9898989898',
          defaultEmail: 'test@email.com'
        })
@@ -56,7 +56,7 @@
 
     - The 'title' which should be the Content Title by which the particular content is registered with in the Client CMS.
 
-    - The 'url' which should be the URL of the particular content that led the user to purchase a subscription - where the user will be redirected to on a successfull purchase
+    - The 'contentUrl' which should be the URL of the particular content that led the user to purchase a subscription - where the user will be redirected to on a successfull purchase
 
     - 'successCallback' this parameter takes a function which is discussed in step 3
 
