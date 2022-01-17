@@ -34,10 +34,11 @@
 
        ```
        const csc = window._csc;
-       csc('init', {
+       csc('subs', {
          contentId: {contentId},
          clientId: {clientId},
          title: {contentTitle},
+         url: {urlOfThePremiumContent},
          successCallback: yourSuccessCallbackFunction,
          debug: true,
          wrappingElementId: 'csc-paywall',
