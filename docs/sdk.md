@@ -42,7 +42,9 @@
             "userDetailsMatch": true,
             "loggedIn": true,
             "hashedEmail": "43983m220m7249y29yr2803y107924mx42r7x2rm80x4xm84mx7m27240m5742x2x924",
-            "hashedPhoneNumber": "mx8x024mr4x03mxyx4802242mx04x7x42x724x024x84x84x"
+            "hashedPhoneNumber": "mx8x024mr4x03mxyx4802242mx04x7x42x724x024x84x84x",
+            "previousSubscriber": true,
+            "existingSubscriber": false
         }
 
     Example userDetailsCallback argument for Not Logged In User:
