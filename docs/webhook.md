@@ -13,7 +13,7 @@ Alternately, you can check the authorization headers. Every request to the webho
 
 > The webhook returns a JSON in the request body - structured like this:
 
-````json
+```json
 {
   "userName": "9818329028",
   "phoneNumber": "9818329028",
@@ -42,7 +42,7 @@ Alternately, you can check the authorization headers. Every request to the webho
   },
   "clientTierId": "TestTierID1"
 }
-````
+```
 
 Do note that you will receive either the phoneNumber or the email depending on what the user chooses to log in with.
 
@@ -90,7 +90,7 @@ Alternately, you can check the authorization headers. Every request to the webho
   },
   "clientTierId": "TestTierID1"
 }
-````
+```
 
 ## Subscription Payment Webhook
 
@@ -101,7 +101,13 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
 ```json
 {
   "_id": "61b9cf42f5d1f54797aaf14f",
-  "renewSubscription": false,
+  "manuallyRenewed": false,
+  "renewSubscription": true,
+  "renewalId": "61efb40a672c7f15840e803c",
+  "renewalDetails": {
+    "price": 300,
+    "currency": "INR"
+  },
   "availedOffers": [],
   "promotional": false,
   "tags": [],
@@ -135,6 +141,7 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
     "digital": true
   },
   "subscriptionId": "616ffd76621d69c5ee43c044",
+  "tierId": "616ffd76621d69c5ee43c045",
   "createdAt": "2021-12-15T11:19:30.914Z",
   "updatedAt": "2021-12-15T11:19:30.914Z",
   "userEmail": "test@email.com",
@@ -144,6 +151,36 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
     "_id": "616ffd76621d69c5ee437485",
     "price": 300,
     "duration": 5,
+    "priceOverrides": {
+      "country": []
+    },
+    "currency": "INR",
+    "basePrice": 0,
+    "offers": []
+  },
+  "gstComponents": {
+    "physical": 0,
+    "digital": 0
+  },
+  "inrGstComponents": {
+    "physical": 0,
+    "digital": 0
+  },
+  "userAddress": {
+    "apartment": "17973 Octane Drive",
+    "area": "Sun Valley",
+    "pincode": "90210",
+    "landmark": "",
+    "city": "Los Angeles",
+    "state": "California",
+    "country": "US"
+  },
+  "renewedSubscriptionDetails": {
+    "renewalCount": 1,
+    "rzpSubscriptionId": "sub_Inua2HuuV2lxLG",
+    "nextRenewalDate": "2022-06-25T08:38:18.369Z",
+    "status": "ACTIVE",
+    "price": 300,
     "currency": "INR"
   }
 }
