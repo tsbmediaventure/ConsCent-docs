@@ -185,3 +185,124 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
   }
 }
 ```
+
+## Subscription Cancelled Webhook
+
+You can register your webhook endpoint for receiving data whenever a user cancels their subscription via ConsCent - by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's cancelled subscription data, along with the details of the subscription and the last purchase/renewal of the user for the particular subscription - anytime the user cancels a client's subscription via ConsCent. Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint.
+
+> The webhook returns a JSON in the request body - structured like this:
+
+```json
+{
+  "cancelledSubscriptionDetails": {
+    "renewalCount": 0,
+    "rzpSubscriptionId": "sub_InvqpVxG0vu7n8",
+    "status": "CANCELLED",
+    "price": 300,
+    "currency": "INR"
+  },
+  "userEmail": "admin1@seed.com",
+  "userPhoneNumber": "9869779647",
+  "userAddress": {
+    "apartment": "",
+    "area": "",
+    "pincode": "",
+    "landmark": "",
+    "city": "",
+    "state": "",
+    "country": ""
+  },
+  "subscriptionDetails": {
+    "freeTrial": {
+      "enabled": true,
+      "duration": 14
+    },
+    "recommended": false,
+    "benefits": "benefit ewiowe, benefit 2",
+    "physical": false,
+    "digital": true,
+    "enabled": true,
+    "migrated": false,
+    "couponsEnabled": true,
+    "adminCoupon": "",
+    "usedCouponNumbers": [1],
+    "_id": "616ffd76621d69c5ee43c044",
+    "clientId": "601a8ea4f2149f089782814f",
+    "title": "Subscription 5",
+    "iconUrl": "https://conscent-subscriptions.s3.ap-south-1.amazonaws.com/local/Samakshs-MacBook-Pro-2.local/Screenshot%202021-07-22%20at%209.05.01%20PM.png",
+    "tiers": [
+      {
+        "priceOverrides": {
+          "country": []
+        },
+        "currency": "INR",
+        "basePrice": 0,
+        "offers": [],
+        "_id": "616ffd76621d69c5ee43c045",
+        "price": 300,
+        "duration": 5
+      }
+    ],
+    "couponCount": 5,
+    "createdAt": "2021-10-20T11:28:54.143Z",
+    "updatedAt": "2022-01-19T06:45:18.634Z",
+    "__v": 5
+  },
+  "lastPurchaseDetails": {
+    "location": {
+      "latitude": 13.0411,
+      "longitude": 77.5702,
+      "postcode": "560056"
+    },
+    "gstComponents": {
+      "physical": 0,
+      "digital": 0
+    },
+    "inrGstComponents": {
+      "physical": 0,
+      "digital": 0
+    },
+    "manuallyRenewed": false,
+    "renewSubscription": true,
+    "availedOffers": [],
+    "promotional": false,
+    "tags": [],
+    "bundle": false,
+    "bundleContentIds": [],
+    "paymentType": ["REPEAT", "NETWORK"],
+    "freeTrial": false,
+    "migrated": false,
+    "_id": "61efc874acb0d82962e2ad15",
+    "userAccount": "61efb6e24b0a601894a15e4c",
+    "clientId": "601a8ea4f2149f089782814f",
+    "buyingPrice": 289.5,
+    "price": 300,
+    "country": "IN",
+    "city": "bengaluru (nagashettyhalli)",
+    "userCountry": "IN",
+    "expiryDate": "2023-04-25T09:52:52.814Z",
+    "priceDetails": {
+      "price": 300,
+      "currency": "INR"
+    },
+    "type": "SUBSCRIPTION",
+    "subscriptionTitle": "Subscription 5",
+    "operatingSystem": "Mac OS",
+    "device": "desktop",
+    "subscriptionType": {
+      "physical": false,
+      "digital": true
+    },
+    "subscriptionId": "616ffd76621d69c5ee43c044",
+    "tierId": "616ffd76621d69c5ee43c045",
+    "renewalId": "61efc865acb0d82962e2ad14",
+    "renewalDetails": {
+      "price": 300,
+      "currency": "INR"
+    },
+    "createdAt": "2022-01-25T09:52:52.817Z",
+    "updatedAt": "2022-01-25T09:52:52.817Z",
+    "__v": 0
+  }
+}
+```
