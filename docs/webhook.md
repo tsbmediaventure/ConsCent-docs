@@ -179,7 +179,7 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
     "renewalCount": 1,
     "rzpSubscriptionId": "sub_Inua2HuuV2lxLG",
     "nextRenewalDate": "2022-06-25T08:38:18.369Z",
-    "status": "ACTIVE",
+    "autoRenew": "ACTIVE",
     "price": 300,
     "currency": "INR"
   }
