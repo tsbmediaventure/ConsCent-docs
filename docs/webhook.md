@@ -40,7 +40,8 @@ Alternately, you can check the authorization headers. Every request to the webho
     "state": "New York",
     "country": "US"
   },
-  "clientTierId": "TestTierID1"
+  "clientTierId": "TestTierID1",
+  "clientSpecificUserId": "11003289298"
 }
 ```
 
@@ -88,7 +89,8 @@ Alternately, you can check the authorization headers. Every request to the webho
     "state": "New York",
     "country": "US"
   },
-  "clientTierId": "TestTierID1"
+  "clientTierId": "TestTierID1",
+  "clientSpecificUserId": "11003289298"
 }
 ```
 
@@ -146,6 +148,7 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
   "updatedAt": "2021-12-15T11:19:30.914Z",
   "userEmail": "test@email.com",
   "userPhoneNumber": "9999999999",
+  "clientSpecificUserId": "11003289298",
   "chosenTier": {
     "clientTierId": "Test Tier ID",
     "_id": "616ffd76621d69c5ee437485",
@@ -212,6 +215,7 @@ You can register your webhook endpoint for receiving data whenever a user cancel
     "state": "",
     "country": ""
   },
+  "clientSpecificUserId": "11003289298",
   "subscriptionDetails": {
     "freeTrial": {
       "enabled": true,
