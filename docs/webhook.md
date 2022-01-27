@@ -276,8 +276,6 @@ You can register your webhook endpoint for receiving data whenever a user cancel
     "paymentType": ["REPEAT", "NETWORK"],
     "freeTrial": false,
     "migrated": false,
-    "_id": "61efc874acb0d82962e2ad15",
-    "userAccount": "61efb6e24b0a601894a15e4c",
     "clientId": "601a8ea4f2149f089782814f",
     "buyingPrice": 289.5,
     "price": 300,
@@ -303,10 +301,7 @@ You can register your webhook endpoint for receiving data whenever a user cancel
     "renewalDetails": {
       "price": 300,
       "currency": "INR"
-    },
-    "createdAt": "2022-01-25T09:52:52.817Z",
-    "updatedAt": "2022-01-25T09:52:52.817Z",
-    "__v": 0
+    }
   }
 }
 ```
