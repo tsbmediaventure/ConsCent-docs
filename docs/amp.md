@@ -3,14 +3,14 @@
 Since custom javascript isn't allowed on AMP Pages, and you cannot directly include the web-sdk on AMP pages, there is a slightly different integration process for AMP Pages.
 This involves adding a few tags to your AMP pages based on your method of integration.
 
-_As of now AMP integration only works with the content registration method_
+_AMP integration works with subscription and passes also now_
 
 ### AMP Integration methods
 
 1. Tag based
 2. Dynamic
 
-Both methods are very similar except the dynamic method requires you to register your premium content with ConsCent and only works with text content. The trade-off in tag based integration is that the content is present in the DOM, only invisible. This might be a plus point if you are worried about losing out on SEO when the content is completely not present.
+Both methods are very similar except the dynamic method requires you to register your premium content with ConsCent (content-registration method) and only works with text content. The trade-off in tag based integration is that the content is present in the DOM, only invisible. This might be a plus point if you are worried about losing out on SEO when the content is completely not present.
 
 ### How to Integrate
 
@@ -18,13 +18,18 @@ Both methods are very similar except the dynamic method requires you to register
 
 0. **(Dynamic mode only)** When registering content on ConsCent via API calls, include the premium html of your content in the 'ampContent' field.
 
-1. Include the amp access tag in your AMP page
+1. Include the amp access tag in your AMP page. Information about the urls and query params is given after the code block
 
 ```
     <script id="amp-access" type="application/json">
       {
-        "authorization": "{API_URL}/api/v1/content/amp?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)",
+        "authorization": "{API_URL}/api/v1/content/amp?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)&title=QUERY_PARAM(title)&subTitle=QUERY_PARAM(clientId)&url=QUERY_PARAM(URL)",
         "login": "{FRONTEND_URL}/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)&returnUrl=RETURN_URL",
+        "login": {
+          "micropricing": "{FRONTEND_URL}/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)returnUrl=RETURN_URL",
+          "pass": "{FRONTEND_URL}/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)&returnUrl=RETURN_URL&purchaseMode=PASS",
+          "subscription": "{SUBS_URL}?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)"
+        },
         "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
         "authorizationFallbackResponse": { "granted": true },
         "noPingback": true
@@ -37,11 +42,17 @@ Both methods are very similar except the dynamic method requires you to register
     ></script>
 ```
 
-Please get the value or API_URL and FRONTEND_URL from the urls section of the Readme. ClientId is your unique clientId available on your dashboard and clientContentId is Id of the content you have registered on ConsCent.
+Please get the value for API_URL, SUBS_URL and FRONTEND_URL from the urls section of the Readme. ClientId is your unique clientId available on your dashboard and clientContentId is Id of the content you have registered on ConsCent.
+- QUERY_PARAM(clientContentId) should be replaced with your unique content's id
+- QUERY_PARAM(clientId) should be replaced with your clientId
+- QUERY_PARAM(title) should be replaced with the title of the content
+- QUERY_PARAM(url) should be replaced with the url of the non-amp content page of the current content
+- QUERY_PARAM(subTitle) is optional, and should be replaced with your content's subtitle or  removed from the url
 
 2. Add a paywall for users who do not have access
 
 ````
+    
     <div amp-access="NOT granted" amp-access-hide>
       <template amp-access-template type="amp-mustache">
         <div class="csc-wrapper">
@@ -49,48 +60,95 @@ Please get the value or API_URL and FRONTEND_URL from the urls section of the Re
             <div class='csc-header-main'>
               Now pay only for what you want!
             </div>
-            <div class='csc-content'>
-              <div class='csc-left-col'>
-                <div class='csc-heading-wrap'>
-                  <div class='csc-small-sub-heading'>
-                    This is a Premium Story
+            <div class="wrap-top-bottom-container">
+              <div class='csc-content'>
+                {{#micropricingExists}}
+                <div class='csc-left-col'>
+                  <div class='csc-heading-wrap'>
+                    <div class='csc-small-sub-heading'>
+                      This is a Premium Story
+                    </div>
+                    <div class='csc-heading'>
+                      Pay {{contentPrice}} to Read now
+                    </div>
+                    <div>
+                      {{#userBalance}}
+                      <div class='csc-balance'>ConsCent Balance: {{userBalance}}</div>
+                      {{/userBalance}}
+                      {{^userBalance}}
+                      <div class='csc-balance'></div>
+                      {{/userBalance}}
+                    </div>
                   </div>
-                  <div class='csc-heading '>
-                    Pay {{contentPrice}} to Read now
+                  <div style='display: flex ;justify-content:center'>
+                    <button class="csc-button" on="tap:amp-access.login-micropricing">Read Now </button>
                   </div>
-                  <div>
-                    {{#userBalance}}
-                    <div class='csc-balance'>ConsCent Balance: {{userBalance}}</div>
-                    {{/userBalance}}
+                  <span class='csc-powered-by'>
+                    Pay with
+                    <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png'
+                      height="10" width="63.33" />
+                  </span>
+                  <div style="margin-top: 16px;">
+                    Once paid, this story is free for {{duration}} days
                   </div>
                 </div>
-                <div style='display: flex ;justify-content:center'>
-                  <button class="csc-button" on="tap:amp-access.login">Read Now </button>
+
+                {{#passExists}}
+                <div class='csc-middle-col'>
+                  <div class='csc-vertical-line'>
+                    <div class='csc-or-write'>OR</div>
+                  </div>
                 </div>
-                <span class='csc-powered-by'>
-                  Pay with
-                  <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png' height="10" width="63.33"/>
-                </span>
-                <div style="margin-top: 16px;">
-                  Once paid, this story is free for {{duration}} days
+                {{/passExists}}
+                {{/micropricingExists}}
+                {{#passExists}}
+                <div class='csc-right-col'>
+                  <div class="csc-subscribe-title-container">
+                    <div class="csc-subscribe-title" style="font-size: 23px;">
+                      {{passDuration}}-hr unlimited access to premium content for {{passPrice}}
+                    </div>
+                  </div>
+
+                  <div style='display: flex ;justify-content:center'>
+                    <button class="csc-button" on="tap:amp-access.login-pass" style="margin-top: 0px;">Buy Pass</button>
+                  </div>
+
+                  {{^micropricingExists}}
+                  {{^subscriptionExists}}
+                  <span class='csc-powered-by'>
+                    Pay with
+                    <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png'
+                      height="10" width="63.33" />
+                  </span>
+                  {{/subscriptionExists}}
+                  {{/micropricingExists}}
+                </div>
+                {{/passExists}}
+              </div>
+              {{#subscriptionExists}}
+              <div class="csc-bottom-container">
+                <div>
+                  <div class="csc-subscribe-title-container">
+                    <div class="csc-subscribe-title">
+                      For unlimited access to all the articles
+                    </div>
+                  </div>
+
+                  <div style='display: flex ;justify-content:center'>
+                    <button class="csc-subscribe-button">Subscribe Now </button>
+                  </div>
+                  {{^micropricingExists}}
+                  {{^passExists}}
+                  <span class='csc-powered-by'>
+                    Pay with
+                    <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png'
+                      height="10" width="63.33" />
+                  </span>
+                  {{/passExists}}
+                  {{/micropricingExists}}
                 </div>
               </div>
-              <div class='csc-middle-col '>
-                <div class='csc-vertical-line '>
-                  <div class='csc-or-write '>OR</div>
-                </div>
-              </div>
-              <div class='csc-right-col '>
-                <div class="csc-subscribe-title-container">
-                  <div class="csc-subscribe-title">
-                    For unlimited access to all the articles
-                  </div>
-                </div>
-                
-                <div style='display: flex ;justify-content:center'>
-                  <button class="csc-subscribe-button">Subscribe Now </button>
-                </div>
-              </div>
+              {{/subscriptionExists}}
             </div>
           </div>
         </div>
@@ -98,10 +156,11 @@ Please get the value or API_URL and FRONTEND_URL from the urls section of the Re
     </div>
 ````
 
-Please note that you  must modify the code to handle the subscription button tap or you may remove the subscription button bit altogether
-**You must also include CSS for the above ConsCent paywall on your amp page.** Include the following CSS block in a style tag on your page:
+Please note that  if you do not use ConsCent's subscription, and have your own system, you can modify the on-click tap of the amp button manually after removing the templating condition.
+**You must also include CSS for the above ConsCent paywall on your amp page.** Include the following CSS block in a separate index.css file and make sure you include it in your main page, or add the styles in your main page.
 
 ```
+      
     .csc-wrapper {
       width: 750px;
       margin: auto;
@@ -133,7 +192,6 @@ Please note that you  must modify the code to handle the subscription button tap
     .csc-content {
       display: flex;
       justify-content: center;
-      padding: 8px;
       text-align: center;
     }
     
@@ -161,6 +219,7 @@ Please note that you  must modify the code to handle the subscription button tap
       font-size: 20px;
       color: #fff;
       border: none;
+      cursor: pointer;
     }
     
     .csc-subscribe-button {
@@ -235,13 +294,22 @@ Please note that you  must modify the code to handle the subscription button tap
       font-size: 18px;
     }
     
+   .wrap-top-bottom-container{
+      padding: 24px;
+    }
     .csc-vertical-line {
       border-right: 1px dashed lightgrey;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    
+
+
+    .csc-bottom-container {
+      border: 1px dashed lightgrey;
+      margin-top: 16px;
+    }
+
     .csc-or-write {
       background-color: #fff;
       width: 20px;
@@ -302,9 +370,16 @@ Please note that you  must modify the code to handle the subscription button tap
         padding-top: 24px;
       }
     }
-
 ```
 
+
+Sample code for including a index.css file - 
+
+```
+  <style amp-custom>
+    @import url('index.css');
+  </style>
+```
 
 
 
