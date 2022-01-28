@@ -66,6 +66,7 @@ https://razorpay.com/docs/payment-gateway/test-card-upi-details/
 ### URLs
 
 API_URL is the base for all API requests to ConsCent.
+SUBS_URL is the url of your subscriptions landing page. This might be a custom domain if you have set it up
 SDK_URL is the URL of the web SDK usually included in your website
 FRONTEND_URL is the URL of the ConsCent user dashboard (only used in some cases)
 
@@ -76,13 +77,13 @@ These differ according to your environment.
 API_URL: https://sandbox-api.conscent.in  
 SDK_URL: https://sandbox-sdk.conscent.in/csc-sdk.js
 FRONTEND_URL: https://sandbox-user.conscent.in
-
+SUBS_URL: https://csc-subs-sandbox.netlify.app
 ##### Production:
 
 API_URL: https://api.conscent.in  
 SDK_URL: https://sdk.conscent.in/csc-sdk.js
 FRONTEND_URL: https://user.conscent.in
-
+SUBS_URL: https://csc-subs.netlify.app
 ### Working with APIs
 
 The API Specification can be found here:  

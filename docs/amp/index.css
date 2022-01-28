@@ -1,0 +1,212 @@
+    
+    
+    .csc-wrapper {
+        width: 750px;
+        margin: auto;
+      }
+      
+      .csc-container {
+        font-family: Lato;
+        font-weight: normal;
+        color: #222;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+        margin: 0 2px -2px 2px;
+      }
+      
+      .csc-header-main {
+        width: 100%;
+        height: 42px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: rgb(204, 51, 51);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+      }
+      
+      .csc-content {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      
+      .csc-left-col {
+        width: 50%;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+      
+      .csc-heading-wrap {
+        line-height: 1.4;
+      }
+      
+      .csc-button {
+        margin-top: 24px;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+        background-color: #3c465c;
+        border-radius: 14px;
+        width: 264px;
+        height: 50px;
+        padding: 0;
+        font-family: Roboto, sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .csc-subscribe-button {
+        background-color: transparent;
+        color: rgb(204, 51, 51);
+        letter-spacing: 1px;
+        margin-bottom: 32px;
+        border: 1px solid rgb(204, 51, 51);
+        border-radius: 14px;
+        width: 264px;
+        height: 50px;
+        padding: 0;
+        font-family: Roboto, sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+      }
+      
+      .csc-subscribe-title {
+        font-size: 18px;
+        margin: auto;
+        word-break: break-word;
+        line-height: 1.3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .csc-subscribe-title-container {
+        margin-bottom: 24px;
+        margin-top: 36px;
+      }
+      
+      .csc-powered-by {
+        margin-bottom: 16px;
+        font-size: 12px;
+        opacity: .8;
+      }
+      
+      .csc-already-container {
+        margin-top: 16px;
+      }
+      
+      .csc-conscent-login-write {
+        color: rgb(60, 70, 92);
+        cursor: pointer;
+        font-size: 16px;
+        color: rgb(204, 51, 51);
+      }
+      
+      .csc-right-col {
+        width: 50%;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 30px;
+      }
+      
+      .csc-middle-col {
+        display: contents;
+      }
+      
+      .csc-heading {
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .csc-small-sub-heading {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      
+      .csc-sub-heading {
+        font-size: 18px;
+      }
+      
+     .wrap-top-bottom-container{
+        padding: 24px;
+      }
+      .csc-vertical-line {
+        border-right: 1px dashed lightgrey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+  
+      .csc-bottom-container {
+        border: 1px dashed lightgrey;
+        margin-top: 16px;
+      }
+  
+      .csc-or-write {
+        background-color: #fff;
+        width: 20px;
+        height: 25px;
+        position: relative;
+        left: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        top: 5px;
+      }
+      .csc-balance {
+        color: #222;
+        opacity: 0.6;
+      }
+      
+      @media (max-width: 678px) {
+        .csc-wrapper {
+          width: 100%;
+        }
+        .csc-content {
+          display: block;
+        }
+        .csc-header-main {
+          font-size: 16px;
+        }
+        .csc-left-col {
+          width: 100%;
+          padding-top: 10px;
+          padding-bottom: 0;
+        }
+        .csc-right-col {
+          width: 100%;
+          padding-top: 16px;
+          padding: 0;
+        }
+        .csc-heading {
+          font-size: 26px;
+        }
+        .csc-small-sub-heading {
+          font-size: 16px;
+        }
+        .csc-vertical-line {
+          border-right: none;
+          border-bottom: 1px dashed lightgrey;
+        }
+        .csc-or-write {
+          width: 50px;
+          left: 0;
+          top: 16px;
+        }
+        .csc-subscribe-already-container {
+          margin-bottom: 32px;
+        }
+        .csc-subscribe-title-container {
+          margin-top: 16px;
+        }
+        .csc-subscribe-title {
+          padding-top: 24px;
+        }
+      
+      }

@@ -12,7 +12,9 @@
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
     />
-
+    <style amp-custom>
+      @import url('index.css');
+    </style>
     <style amp-boilerplate>
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -60,207 +62,6 @@
           visibility: visible;
         }
       }
-    .csc-wrapper {
-      width: 750px;
-      margin: auto;
-    }
-    
-    .csc-container {
-      font-family: Lato;
-      font-weight: normal;
-      color: #222;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
-      margin: 0 2px -2px 2px;
-    }
-    
-    .csc-header-main {
-      width: 100%;
-      height: 42px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background-color: rgb(204, 51, 51);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-    }
-    
-    .csc-content {
-      display: flex;
-      justify-content: center;
-      padding: 8px;
-      text-align: center;
-    }
-    
-    .csc-left-col {
-      width: 50%;
-      padding-top: 16px;
-      padding-bottom: 16px;
-    }
-    
-    .csc-heading-wrap {
-      line-height: 1.4;
-    }
-    
-    .csc-button {
-      margin-top: 24px;
-      margin-bottom: 5px;
-      letter-spacing: 1px;
-      background-color: #3c465c;
-      border-radius: 14px;
-      width: 264px;
-      height: 50px;
-      padding: 0;
-      font-family: Roboto, sans-serif;
-      font-weight: 500;
-      font-size: 20px;
-      color: #fff;
-      border: none;
-    }
-    
-    .csc-subscribe-button {
-      background-color: transparent;
-      color: rgb(204, 51, 51);
-      letter-spacing: 1px;
-      margin-bottom: 32px;
-      border: 1px solid rgb(204, 51, 51);
-      border-radius: 14px;
-      width: 264px;
-      height: 50px;
-      padding: 0;
-      font-family: Roboto, sans-serif;
-      font-weight: 500;
-      font-size: 20px;
-    }
-    
-    .csc-subscribe-title {
-      font-size: 18px;
-      margin: auto;
-      word-break: break-word;
-      line-height: 1.3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .csc-subscribe-title-container {
-      margin-bottom: 24px;
-      margin-top: 36px;
-    }
-    
-    .csc-powered-by {
-      margin-bottom: 16px;
-      font-size: 12px;
-      opacity: .8;
-    }
-    
-    .csc-already-container {
-      margin-top: 16px;
-    }
-    
-    .csc-conscent-login-write {
-      color: rgb(60, 70, 92);
-      cursor: pointer;
-      font-size: 16px;
-      color: rgb(204, 51, 51);
-    }
-    
-    .csc-right-col {
-      width: 50%;
-      padding-top: 16px;
-      padding-bottom: 16px;
-      padding-left: 30px;
-    }
-    
-    .csc-middle-col {
-      display: contents;
-    }
-    
-    .csc-heading {
-      font-size: 26px;
-      font-weight: 600;
-    }
-    
-    .csc-small-sub-heading {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-    
-    .csc-sub-heading {
-      font-size: 18px;
-    }
-    
-    .csc-vertical-line {
-      border-right: 1px dashed lightgrey;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .csc-or-write {
-      background-color: #fff;
-      width: 20px;
-      height: 25px;
-      position: relative;
-      left: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      top: 5px;
-    }
-    .csc-balance {
-      color: #222;
-      opacity: 0.6;
-    }
-    
-    @media (max-width: 678px) {
-      .csc-wrapper {
-        width: 100%;
-      }
-      .csc-content {
-        display: block;
-      }
-      .csc-header-main {
-        font-size: 16px;
-      }
-      .csc-left-col {
-        width: 100%;
-        padding-top: 10px;
-        padding-bottom: 0;
-      }
-      .csc-right-col {
-        width: 100%;
-        padding-top: 16px;
-        padding: 0;
-      }
-      .csc-heading {
-        font-size: 26px;
-      }
-      .csc-small-sub-heading {
-        font-size: 16px;
-      }
-      .csc-vertical-line {
-        border-right: none;
-        border-bottom: 1px dashed lightgrey;
-      }
-      .csc-or-write {
-        width: 50px;
-        left: 0;
-        top: 16px;
-      }
-      .csc-subscribe-already-container {
-        margin-bottom: 32px;
-      }
-      .csc-subscribe-title-container {
-        margin-top: 16px;
-      }
-      .csc-subscribe-title {
-        padding-top: 24px;
-      }
-    
-    }
     </style>
     <noscript
       ><style amp-boilerplate>
@@ -275,8 +76,12 @@
 
     <script id="amp-access" type="application/json">
       {
-        "authorization": "https://sandbox-api.conscent.in/api/v1/content/amp?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)",
-        "login": "https://sandbox-user.conscent.in/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)&returnUrl=RETURN_URL",
+        "authorization": "https://sandbox-api.conscent.in/api/v1/content/amp?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)&title=someTitle&url=https://example.com/content",
+        "login": {
+          "micropricing": "{FRONTEND_URL}/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)returnUrl=RETURN_URL",
+          "pass": "{FRONTEND_URL}/overlay?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)&returnUrl=RETURN_URL&purchaseMode=PASS",
+          "subscription": "{SUBS_URL}?rid=READER_ID&_=RANDOM&clientContentId=QUERY_PARAM(clientContentId)&clientId=QUERY_PARAM(clientId)"
+        },
         "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
         "authorizationFallbackResponse": { "granted": true },
         "noPingback": true
@@ -318,25 +123,107 @@
       found in a prehistoric cave in the Republic of Georgia that date back to
       34,000 BC.
 
+
       <div amp-access="NOT granted" amp-access-hide>
-        <div
-          on="tap:amp-access.login"
-          style="
-            color: green;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: black;
-            color: white;
-            font-size: 18px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            margin: 4px;
-            padding: 8px;
-            cursor: pointer;
-          "
-        >
-          <a>Unlock the full article now!</a>
-        </div>
+        <template amp-access-template type="amp-mustache">
+          <div class="csc-wrapper">
+            <div class='csc-container'>
+              <div class='csc-header-main'>
+                Now pay only for what you want!
+              </div>
+              <div class="wrap-top-bottom-container">
+                <div class='csc-content'>
+                  {{#micropricingExists}}
+                  <div class='csc-left-col'>
+                    <div class='csc-heading-wrap'>
+                      <div class='csc-small-sub-heading'>
+                        This is a Premium Story
+                      </div>
+                      <div class='csc-heading'>
+                        Pay {{contentPrice}} to Read now
+                      </div>
+                      <div>
+                        {{#userBalance}}
+                        <div class='csc-balance'>ConsCent Balance: {{userBalance}}</div>
+                        {{/userBalance}}
+                        {{^userBalance}}
+                        <div class='csc-balance'></div>
+                        {{/userBalance}}
+                      </div>
+                    </div>
+                    <div style='display: flex ;justify-content:center'>
+                      <button class="csc-button" on="tap:amp-access.login-micropricing">Read Now </button>
+                    </div>
+                    <span class='csc-powered-by'>
+                      Pay with
+                      <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png'
+                        height="10" width="63.33" />
+                    </span>
+                    <div style="margin-top: 16px;">
+                      Once paid, this story is free for {{duration}} days
+                    </div>
+                  </div>
+  
+                  {{#passExists}}
+                  <div class='csc-middle-col'>
+                    <div class='csc-vertical-line'>
+                      <div class='csc-or-write'>OR</div>
+                    </div>
+                  </div>
+                  {{/passExists}}
+                  {{/micropricingExists}}
+                  {{#passExists}}
+                  <div class='csc-right-col'>
+                    <div class="csc-subscribe-title-container">
+                      <div class="csc-subscribe-title" style="font-size: 23px;">
+                        {{passDuration}}-hr unlimited access to premium content for {{passPrice}}
+                      </div>
+                    </div>
+  
+                    <div style='display: flex ;justify-content:center'>
+                      <button class="csc-button" on="tap:amp-access.login-pass" style="margin-top: 0px;">Buy Pass</button>
+                    </div>
+  
+                    {{^micropricingExists}}
+                    {{^subscriptionExists}}
+                    <span class='csc-powered-by'>
+                      Pay with
+                      <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png'
+                        height="10" width="63.33" />
+                    </span>
+                    {{/subscriptionExists}}
+                    {{/micropricingExists}}
+                  </div>
+                  {{/passExists}}
+                </div>
+                {{#subscriptionExists}}
+                <div class="csc-bottom-container">
+                  <div>
+                    <div class="csc-subscribe-title-container">
+                      <div class="csc-subscribe-title">
+                        For unlimited access to all the articles
+                      </div>
+                    </div>
+  
+                    <div style='display: flex ;justify-content:center'>
+                      <button class="csc-subscribe-button">Subscribe Now </button>
+                    </div>
+                    {{^micropricingExists}}
+                    {{^passExists}}
+                    <span class='csc-powered-by'>
+                      Pay with
+                      <amp-img src='https://conscent-static-assets.s3.ap-south-1.amazonaws.com/conscentLogoMono.png'
+                        height="10" width="63.33" />
+                    </span>
+                    {{/passExists}}
+                    {{/micropricingExists}}
+                  </div>
+                </div>
+                {{/subscriptionExists}}
+              </div>
+            </div>
+          </div>
+        </template>
       </div>
 
       <span amp-access="granted" amp-access-hide>
