@@ -79,6 +79,7 @@ Integration steps: -
          contentId: {contentId},
          clientId: {clientId},
          title: {contentTitle},
+         subTitle: {contentSubtitle},
          successCallback: yourSuccessCallbackFunction,
          debug: true,
          wrappingElementId: 'csc-paywall',
@@ -107,6 +108,8 @@ Integration steps: -
        - The 'clientId' which is retrieved from the Client Integrations Page of the ConsCent Client Dashboard.
 
        - The 'title' which should be the Content Title by which the particular content is registered with in the Client CMS.
+
+       - The 'subTitle' which should be the Content Subtitle. This is a optional parameter.
 
        - 'successCallback' this parameter takes a function which is discussed in step 3
 
@@ -141,6 +144,8 @@ Integration steps: -
        - 'defaultEmail' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
 
        - 'internalUserId' of the user, from the client CMS/Database which will be passed back in the login/signup/purchase webhooks, allowing the client to keep track of the user's activities
+
+       
 
     3. successCallback and validation
 
