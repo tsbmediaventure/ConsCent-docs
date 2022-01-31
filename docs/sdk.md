@@ -56,3 +56,26 @@ Example userDetailsCallback argument for Not Logged In User:
         "loggedIn": false,
         "userDetailsMatch": false
     }
+
+
+### Log User out of ConsCent
+
+Log the user out by calling the CSC 'logout' function and passing a callback function in the arguments where the logout result be passed by ConsCent:
+
+   ```
+   const csc = window._csc;
+   csc('logout', {
+     logoutCallback: yourUserDetailsCallbackFunction,
+   })
+   ```
+
+example invokation: 
+`window._csc('user-details', { logoutCallback: (e) => console.log(e)})`
+
+Possible Responses:
+
+Failure Case:
+{ error: 'user-not-logged-in' }
+
+Success Case:
+{ message: 'Successfully logged out of all devices' }
