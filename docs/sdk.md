@@ -10,6 +10,9 @@ Get ConsCent user details by initialising the CSC 'user-details' function and pa
          userDetailsCallback: yourUserDetailsCallbackFunction,
        })
        ```
+       
+       example invokation: 
+       `window._csc('user-details', { userDetailsCallback: (e) => console.log(e)})`
 
        Parameters explained:
 
