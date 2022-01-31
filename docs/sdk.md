@@ -2,7 +2,7 @@
 
 ### Get User Details from SDK
 
-    Get ConsCent user details by initialising the CSC 'user-details' function and passing a callback function in the arguments where the user details will be passed by ConsCent:
+Get ConsCent user details by initialising the CSC 'user-details' function and passing a callback function in the arguments where the user details will be passed by ConsCent:
 
        ```
        const csc = window._csc;
