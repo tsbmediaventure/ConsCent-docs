@@ -97,6 +97,7 @@ Integration steps: -
          hiddenElemId: '',
          defaultPhone: '9898989898',
          defaultEmail: 'test@email.com',
+         defaultname: 'John Doe',
          internalUserId: '10000000000'
        })
        ```
@@ -142,6 +143,8 @@ Integration steps: -
        - 'defaultPhone' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
 
        - 'defaultEmail' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
+      
+       - 'defaultName' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
 
        - 'internalUserId' of the user, from the client CMS/Database which will be passed back in the login/signup/purchase webhooks, allowing the client to keep track of the user's activities
 
