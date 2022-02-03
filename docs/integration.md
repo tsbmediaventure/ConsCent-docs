@@ -79,6 +79,7 @@ Integration steps: -
          contentId: {contentId},
          clientId: {clientId},
          title: {contentTitle},
+         contentCategories=['category1', 'category2', 'category3']
          successCallback: yourSuccessCallbackFunction,
          debug: true,
          wrappingElementId: 'csc-paywall',
@@ -107,6 +108,8 @@ Integration steps: -
        - The 'clientId' which is retrieved from the Client Integrations Page of the ConsCent Client Dashboard.
 
        - The 'title' which should be the Content Title by which the particular content is registered with in the Client CMS.
+
+       - The 'contentCategories' which is an optiona parameters - it must be an array of string of all the categories that you would like to be linked to the content.
 
        - 'successCallback' this parameter takes a function which is discussed in step 3
 
