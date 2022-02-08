@@ -148,6 +148,7 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
   "updatedAt": "2021-12-15T11:19:30.914Z",
   "userEmail": "test@email.com",
   "userPhoneNumber": "9999999999",
+  "userName": "john doe",
   "clientSpecificUserId": "11003289298",
   "chosenTier": {
     "clientTierId": "Test Tier ID",
@@ -206,6 +207,7 @@ You can register your webhook endpoint for receiving data whenever a user cancel
   },
   "userEmail": "admin1@seed.com",
   "userPhoneNumber": "9869779647",
+  "userName": "john doe",
   "userAddress": {
     "apartment": "",
     "area": "",

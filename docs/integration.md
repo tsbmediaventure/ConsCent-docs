@@ -79,6 +79,8 @@ Integration steps: -
          contentId: {contentId},
          clientId: {clientId},
          title: {contentTitle},
+         contentCategories=['category1', 'category2', 'category3']
+         subTitle: {contentSubtitle},
          successCallback: yourSuccessCallbackFunction,
          debug: true,
          wrappingElementId: 'csc-paywall',
@@ -96,6 +98,7 @@ Integration steps: -
          hiddenElemId: '',
          defaultPhone: '9898989898',
          defaultEmail: 'test@email.com',
+         defaultname: 'John Doe',
          internalUserId: '10000000000'
        })
        ```
@@ -107,6 +110,10 @@ Integration steps: -
        - The 'clientId' which is retrieved from the Client Integrations Page of the ConsCent Client Dashboard.
 
        - The 'title' which should be the Content Title by which the particular content is registered with in the Client CMS.
+
+       - The 'contentCategories' which is an optiona parameters - it must be an array of string of all the categories that you would like to be associated with the content.
+
+       - The 'subTitle' which should be the Content Subtitle. This is a optional parameter.
 
        - 'successCallback' this parameter takes a function which is discussed in step 3
 
@@ -139,8 +146,12 @@ Integration steps: -
        - 'defaultPhone' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
 
        - 'defaultEmail' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
+      
+       - 'defaultName' of the user, if available with the client, can be passed to ConsCent to be pre-filled in the required places
 
        - 'internalUserId' of the user, from the client CMS/Database which will be passed back in the login/signup/purchase webhooks, allowing the client to keep track of the user's activities
+
+       
 
     3. successCallback and validation
 
