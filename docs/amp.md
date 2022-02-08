@@ -135,7 +135,7 @@ Please get the value for API_URL, SUBS_URL and FRONTEND_URL from the urls sectio
                   </div>
 
                   <div style='display: flex ;justify-content:center'>
-                    <button class="csc-subscribe-button">Subscribe Now </button>
+                    <button class="csc-subscribe-button" on="tap:amp-access.login-subscription">Subscribe Now </button>
                   </div>
                   {{^micropricingExists}}
                   {{^passExists}}
@@ -235,6 +235,7 @@ Please note that  if you do not use ConsCent's subscription, and have your own s
       font-family: Roboto, sans-serif;
       font-weight: 500;
       font-size: 20px;
+      cursor: pointer;
     }
     
     .csc-subscribe-title {
