@@ -16,6 +16,8 @@ Alternately, you can check the authorization headers. Every request to the webho
 ```json
 {
   "userName": "9818329028",
+  "userId": "7843y9xm44428xm24x2m0x2xm42",
+  "freeTrial": true,
   "phoneNumber": "9818329028",
   "email": "test-email@webhook.com",
   "country": "IN",
@@ -67,6 +69,8 @@ Alternately, you can check the authorization headers. Every request to the webho
   "userName": "9818329028",
   "phoneNumber": "9818329028",
   "email": "test-email@webhook.com",
+  "userId": "7843y9xm44428xm24x2m0x2xm42",
+  "freeTrial": true,
   "country": "IN",
   "hashedPhoneNumber": "7942mey829mxe1238z2ym9zy39my29zy2z9dy24793msy29z2z",
   "hashedEmail": "8392mx30mx2mu8034x02mx802ry2480nyd249yx420xfn20w4y04xm2024",
@@ -103,6 +107,8 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
 ```json
 {
   "_id": "61b9cf42f5d1f54797aaf14f",
+  "userId": "7843y9xm44428xm24x2m0x2xm42",
+  "purchaseId": "4932228982489248928208024",
   "manuallyRenewed": false,
   "renewSubscription": true,
   "renewalId": "61efb40a672c7f15840e803c",
@@ -207,6 +213,7 @@ You can register your webhook endpoint for receiving data whenever a user cancel
   },
   "userEmail": "admin1@seed.com",
   "userPhoneNumber": "9869779647",
+  "userId": "7843y9xm44428xm24x2m0x2xm42",
   "userName": "john doe",
   "userAddress": {
     "apartment": "",
