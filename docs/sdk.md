@@ -78,7 +78,7 @@ Parameters explained:
 Example subscription details argument for Logged In User:
 (the subscription details can contain more than one object if the user has purchased multiple subscriptions)
 
-````
+```
 
     {
         "loggedIn": true,
