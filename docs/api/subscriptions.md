@@ -55,6 +55,7 @@ Please pass your api key as username and api secret as password as basic auth to
       "expiryDate": "2022-03-28T12:49:02.844Z",
       "subscriptionId": "61a49855fabe8d7705a2cab4",
       "tierId": "61a49855fabe8d7705a2cab6",
+      "createdAt": "2022-03-03T09:13:53.266Z",
       "userId": "613720ec6a14e1100bdfb9f5",
       "userEmail": "asdf@sdf.co",
       "userPhoneNumber": "129347792",
