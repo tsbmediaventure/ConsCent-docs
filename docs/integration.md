@@ -81,6 +81,7 @@ Integration steps: -
          title: {contentTitle},
          categories=['category1', 'category2', 'category3']
          subTitle: {contentSubtitle},
+         category:{contentCategory},
          successCallback: yourSuccessCallbackFunction,
          debug: true,
          wrappingElementId: 'csc-paywall',
@@ -114,6 +115,8 @@ Integration steps: -
        - The 'categories' which is an optiona parameters - it must be an array of string of all the categories that you would like to be associated with the content.
 
        - The 'subTitle' which should be the Content Subtitle. This is a optional parameter.
+
+       - The 'category' which should be the Content Category. This is a opitonal parameter.
 
        - 'successCallback' this parameter takes a function which is discussed in step 3
 
