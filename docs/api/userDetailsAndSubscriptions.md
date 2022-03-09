@@ -1,4 +1,4 @@
-# Get UserDetials and Subscriptions endpoint
+# Getu user details and subscriptions information
 
 Get the user Details and subscriptions
 
@@ -8,9 +8,9 @@ Get the user Details and subscriptions
 
 **Auth required** : NO
 
-## Query Parameters
+## Mandatory query Parameters
 
-**clientId**: Pass clientId of the client
+**clientId**: Pass clientId
 
 **userId**: Pass conscent's user Id to get the user details
 
