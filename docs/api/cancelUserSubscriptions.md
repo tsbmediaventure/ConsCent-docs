@@ -12,7 +12,7 @@ Please pass your api key as username and api secret as password as basic auth to
 
 ## Success Response
 
-**Code** : `200 OK`
+**Code** : `201 CREATED`
 
 **Content examples**
 
