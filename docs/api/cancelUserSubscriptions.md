@@ -4,15 +4,18 @@ The client can cancel the active subscripptions for a user
 
 **URL** : `{API_URL}/client/cancel-subscriptions/{userId}`
 
+Please pass the ConsCent user id of the user whose subscriptions you wish to cancel
+
 **Method** : `POST`
 
 **Auth required** : YES
 
 Please pass your api key as username and api secret as password as basic auth to access the endpoint
 
+
 ## Success Response
 
-**Code** : `201 CREATED`
+**Code** : `200 OK`
 
 **Content examples**
 
