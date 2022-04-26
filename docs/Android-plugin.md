@@ -201,5 +201,29 @@ for eg:
 In you onActivityResult method, pass below line of code:
 Conscent.handledIntent()
 
+## Note:
+In production mode, please enable the synchronized lock put in Conscent.configure() function to achieve one-time setup
+
+
+To get logged in user details
+
+* Kotlin
+  
+Conscent.getUserDetails()
+  
+* Java
+
+Conscent.Companion.getUserDetails();
+
+
+To logout the user
+
+* Kotlin
+
+Conscent.logoutUser()
+
+* Java
+
+Conscent.Companion.logoutUser();
 
 ======================End======================
