@@ -314,3 +314,73 @@ You can register your webhook endpoint for receiving data whenever a user cancel
   }
 }
 ```
+
+## Pass Payment Webhook
+
+You can register your webhook endpoint for receiving data whenever a user pays for their pass via ConsCent - by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's pass payment data, along with the details of the pass and the last purchase/renewal of the user for the particular pass - anytime the user purchases a client's pass via ConsCent. Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint.
+
+> The webhook returns a JSON in the request body - structured like this:
+
+```json
+{
+  "gstComponents": {
+    "physical": 0,
+    "digital": 0
+  },
+  "inrGstComponents": {
+    "physical": 0,
+    "digital": 0
+  },
+  "manuallyRenewed": false,
+  "renewSubscription": false,
+  "availedOffers": [],
+  "promotional": false,
+  "categories": [],
+  "bundle": false,
+  "bundleContentIds": [],
+  "paymentType": [
+    "NEW"
+  ],
+  "freeTrial": false,
+  "migrated": false,
+  "_id": "628b76941ed3d9c772be2626",
+  "userAccount": "628b765e16d01ac4721e1676",
+  "clientId": "5f92a62013332e0f667794dc",
+  "clientContentId": "Client-Story-Id-1",
+  "contentId": "628b6c2cbf5053737a28a63a",
+  "buyingPrice": 80,
+  "price": 100,
+  "country": "IN",
+  "city": "bengaluru (nagashettyhalli)",
+  "location": {
+    "latitude": 13.0411,
+    "longitude": 77.5702,
+    "postcode": "560056"
+  },
+  "userCountry": "IN",
+  "expiryDate": "2022-05-23T18:57:07.989Z",
+  "passTitle": "qwe",
+  "priceDetails": {
+    "price": 100,
+    "currency": "INR"
+  },
+  "type": "PASS",
+  "operatingSystem": "Mac OS",
+  "device": "desktop",
+  "createdAt": "2022-05-23T11:57:08.061Z",
+  "updatedAt": "2022-05-23T11:57:08.061Z",
+  "__v": 0,
+  "userId": "628b765e16d01ac4721e1676",
+  "userPhoneNumber": "9276278392",
+  "userName": "",
+  "userAddress": {
+    "apartment": "",
+    "area": "",
+    "pincode": "",
+    "landmark": "",
+    "city": "",
+    "state": "",
+    "country": ""
+  }
+}
+```
