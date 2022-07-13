@@ -403,7 +403,19 @@ You can register your webhook endpoint for receiving data whenever a user pays f
   },
   "availedOffers": [],
   "bundle": true,
-  "bundleSubscriptions": [],
+  "bundleSubscriptions": 
+  [
+    {
+      "_id":"61e93279bf6de47e4f6a676b",
+      "clientId": "5fbe46eebee15f1cebc81513",
+      "tierId": "61e93279bf6de47e4f6a676d"
+    },
+   {
+      "_id": "61e951161a563d0729652d21",
+      "clientId": "5fd737076bf5d74d5bf59497",
+      "tierId": "61e951161a563d0729652d23"
+    }  
+  ],
   "paymentType": [
     "NEW"
   ],
