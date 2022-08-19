@@ -1,121 +1,260 @@
-# ConsCent Docs
+Conscent Plugin for developers
+======================
 
-### Before you begin
+This is a step by step guide to include Conscent Plugin in your app. This plugin is developed in Kotlin and supports both Java and Kotlin languages. 
 
-You must have contacted or been contacted by the ConsCent team and have access to your ConsCent Dashboard.
+### Step-1
+Copy plugin aar file to your libs folder and add it in your app level build gradle file.
 
-Your clientId, API_KEY and API_SECRET are available in the dashboard in the SDK integration section. (Present on the sidebar)
+### Step-2
+In your application build.gradle file, include dependency as below with latest versions:
 
-NEVER expose your API_SECRET. Do NOT use it in the frontend-side of your website.
+* Retrofit and GSON converter
+implementation 'com.squareup.retrofit2:retrofit:(insert latest version)'
+implementation 'com.squareup.retrofit2:converter-gson:(insert latest version)'
+Example:
+implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-If you are only interested in receiving donations from users, you can read about [accepting donations here](donations.md)
+* Coroutines
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:(insert latest version)'
+Example:
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
 
-_Please note that this is the developer documentation, for information on making requests to ConsCent APIs, please consult the [API documentation](https://tsbmediaventure.github.io/developer-docs/)_
+* Browser
+implementation 'androidx.browser:browser:(insert latest version)'
+Example:
+implementation 'androidx.browser:browser:1.3.0'
 
-### Table of Contents
+Note: 
+1. In case of error for Kotlin not enabled, please enable Kotlin for project.
+2. In case of error in Manifest merging, please merge Manifest as per Android Studio support or include line tools:replace="android:icon,android:roundIcon" inside your application tag in Android Manifest file.
 
-- Getting started
-- Sandbox and Production
-  - Making fake payments in sandbox
-- URLs list
-- Working with APIs
-- Understanding ConsCent flow
-- Which integration to choose?
-- Integration Methods
-  - Content registration
-  - Blanket pricing
-  - Hashcode based integration
-- [AMP Support](amp.md)
-- Pricing strategies
-  - International Pricing
-  - Different price in India and abroad
-  - Category based pricing
-- Customizing the paywall
-  - Screen type
-  - Subscription
-  - Sign-in
-  - Translucency
-  - Button Mode
-- [Webhooks](webhook.md)
-- [Analytics](analytics.md)
-- [Donations](donations.md)
-- [Tagging](tagging.md)
+## Step-3
+In your activity class's onCreate, pass yourClientId, Environment Mode and app mode to be used in your app as below sample:
+Conscent.configure(yourApplicationContext, "yourClientId", MODE, APP_MODE)
+Remember to set configuration before you call further callbacks.
 
-### Getting Started
+1. yourApplicationContext: Pass your application context here.
+2. yourClientId: Pass your clientId received from Conscent.
+3. Mode can be set as 
+ConscentConfiguration.MODE.STAGE
+ConscentConfiguration.MODE.SANDBOX
+ConscentConfiguration.MODE.PRODUCTION
 
-If you are unsure on which integration is for you, please read which integration to choose. Once satisfied, you can read up on how your desired integration flow works and then dabble in customizing the paywall.
+Mode is used for configuration testing of different environments available.
 
-### Sandbox and Production
+4. APP_MODE can be set as 
+ConsCentConfiguration.APP_MODE.DEBUG
+ConsCentConfiguration.APP_MODE.PROD
 
-Sandbox and production are two separate ConsCent environments that you will work with while integrating ConsCent. The difference between the two is that sandbox lets you make fake payments that you can make to test out your integration.
-The typical customer users sandbox in their staging servers and production on their live deployment.
-Switching environments is a matter of using separate keys / conscent urls.
+APP_MODE is used for checking debug and production environment of app where if APP_MODE is debug, then all errors will be shown as Toast messages and Logs. For PROD mode, only logs will be available for critical errors like Network unavailability, wrong client_id and wrong content_id.
 
-##### Making fake payments in sandbox
+## Step-4
+To check if an article/content is free/paid or a payment needs to be done, in your class, use as below sample:
+Parameters detail can be checked below for more information.
 
-Depending on your country/currency you will get Paytm or Razorpay prompts
+* Kotlin
 
-###### Paytm
+Conscent.checkContentAccess(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        successCallback,
+        errorCallback,
+        subscribeCallback,
+        buyPassCallback,
+        signInCallback,
+        contentTitle,
+        subscriptionUrl,
+        canSubscribe,
+        showClose
+    )
 
-The easiest way to make a fake payment is to choose netbanking, any bank and proceed.
+OR
 
-###### Razorpay
+Conscent.checkContentAccess(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        onConscentListener,
+        contentTitle,
+        subscriptionUrl,
+        canSubscribe,
+        showClose
+    )
 
-https://razorpay.com/docs/payment-gateway/test-card-upi-details/
 
-### URLs
+* Java
 
-API_URL is the base for all API requests to ConsCent.
-SUBS_URL is the url of your subscriptions landing page. This might be a custom domain if you have set it up
-SDK_URL is the URL of the web SDK usually included in your website
-FRONTEND_URL is the URL of the ConsCent user dashboard (only used in some cases)
+Conscent.Companion.checkContentAccess(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        successCallback,
+        errorCallback,
+        subscribeCallback,
+        buyPassCallback,
+        signInCallback,
+        contentTitle,
+        subscriptionUrl,
+        canSubscribe,
+        showClose
+    );
 
-These differ according to your environment.
+OR
 
-##### Sandbox:
+Conscent.Companion.checkContentAccess(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        onConscentListener,
+        contentTitle,
+        subscriptionUrl,
+        canSubscribe,
+        showClose
+    );
 
-API_URL: https://sandbox-api.conscent.in  
-SDK_URL: https://sandbox-sdk.conscent.in/csc-sdk.js
-FRONTEND_URL: https://sandbox-user.conscent.in
-SUBS_URL: https://csc-subs-sandbox.netlify.app
-##### Production:
 
-API_URL: https://api.conscent.in  
-SDK_URL: https://sdk.conscent.in/csc-sdk.js
-FRONTEND_URL: https://user.conscent.in
-SUBS_URL: https://csc-subs.netlify.app
-### Working with APIs
+To get all the subscription packages available, in your class, use as below sample:
+Parameters detail can be checked below for more information.
 
-The API Specification can be found here:  
-https://tsbmediaventure.github.io/developer-docs
+* Kotlin
 
-It outlines all the APIs available to you and how to authenticate for the same.
-The authentication is as follows -
-Client API Key and Secret must be passed in Authorization Headers using Basic Auth. With API Key as the Username and API Secret as the password.
-If you are unsure how to generate the header, [please use this](https://www.blitter.se/utils/basic-authentication-header-generator/)
+Conscent.checkSubscriptions(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        successCallback,
+        errorCallback,
+        subscribeCallback,
+        signInCallback,
+        showClose
+    )
 
-### Understanding ConsCent web flow
+OR
 
-The general ConsCent web flow consists of:-
+Conscent.checkSubscriptions(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        onConscentListener,,
+        showClose
+    )
 
-1. The ConsCent SDK being included in your website
-2. The ConsCent SDK being initialized to show the paywall
-3. The user interacting with the paywall and completing the conscent flow which means they either-
 
-- signed up and paid for the story
-- were logged in and only paid for the story, or
-- had already recently paid for the story
+* Java
 
-4. Your frontend website is notified that it has to show the content premium content
+Conscent.Companion.checkContentAccess(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        successCallback,
+        errorCallback,
+        subscribeCallback,
+        signInCallback,
+        showClose
+   );
 
-The implementation of the steps depend on the the integration method of your choosing.
+OR
 
-### Which Integration method to choose?
+Conscent.Companion.checkContentAccess(
+        yourActivityContext,
+        parent,
+        frameLayout,
+        colorAccent,
+        contentId,
+        onConscentListener,
+        showClose
+    );
 
-There are three main ways to integrate ConsCent.
 
-1. Content registration - This method gives you control over the price for each content. For this to work, your CMS needs to make API calls to register metadata on each priced content to ConsCent's backend servers.
-2. Blanket pricing - This method is useful for a quick proof of concept or if you have very limited control over your backend/cms
-3. Hashcode registration - Similar to content registration flow, useful if you are not able to make API calls from your backend/CMS. Content meta-data is securely hashed before-hand and then the hashed code is used to initialize the paywall client side. This method is not currently supported on Android/iOS and AMP pages.
+Parameters detail
+* yourActivityContext: This is your activity content which is calling the methods and where callback will be received.
+* parent: This will be the parent of your layout. Please keep ConstraintLayout as your root view in your activity xml file. Pass the reference of your root view in checkContent function.
+* frameLayout: This will be a FrameLayout where payment page will be inflated. Create a frameLayout in your xml and pass here as a reference. 
+for eg: 
+<FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+* colorAccent: Color object to be passed to make payment flow layout accent color match as per your color.
+  Eg: Color.parseColor("#0087ca") or ContextCompat.getColor(context, color_from_colors.xml) like ContextCompat.getColor(this, R.color.red)
+* article/content id: This will be your article or content id for which detail needs to be checked.
+* onConscentListener: You can pass a listener which will get called after success or failure in processing. If you pass a listener, after successful processing, the success reference will be called and for failed event, failure event will be called. You can implement OnConscentListener in your activity and then pass it as a reference.
+* successCallback: This is the success callback which will get called for every successful processing. You can pass your method as a reference or an lambda expression which will get called in case of success.
+* errorCallback: This is optional. You can pass it as null. This is the failure callback which will get called for every failed processing. You can pass your method as a reference or an lambda expression and it'll get called for failed cases. You can implement your code in it for failed cases.
+* subscribeCallback: This is optional callback. If you want to inflate subscribe layout, pass a subscribe function which will be called when subscribe button will be clicked inside payment flow. Passing null will not inflate subscribe layout.
+* buyPassCallback: This is optional callback. It will be called when buy-pass button will be clicked inside payment flow.
+* signInCallback: This is the callback function which will be called when a user click on signIn button in payment flow. This will be only visible if subscribe layout has been inflated.
+* contentTitle: Type string, title of the content for display purposes.
+* subscriptionUrl: Type string, url to be used when subscribe button is clicked.
+* canSubscribe: Type boolean, pass this as "true" to show subscribe layout else "false".
+* showClose: Type boolean, pass this as "true" to show close button on the paywall/subscriptions, default is "false".
 
-You can find detailed instructions in integration page for each method.
+## Step-5
+In you onActivityResult method, pass below line of code:
+Conscent.handledIntent()
+
+## Note:
+In production mode, please enable the synchronized lock put in Conscent.configure() function to achieve one-time setup
+
+
+To get logged in user details
+
+* Kotlin
+  
+Conscent.getUserDetails()
+  
+* Java
+
+Conscent.Companion.getUserDetails();
+
+
+To get subscription details
+
+* Kotlin
+
+Conscent.getSubscriptionDetails()
+
+* Java
+
+Conscent.Companion.getSubscriptionDetails();
+
+
+To get pass details
+
+* Kotlin
+
+Conscent.getPassDetails()
+
+* Java
+
+Conscent.Companion.getPassDetails();
+
+
+To logout the user
+
+* Kotlin
+
+Conscent.logoutUser()
+
+* Java
+
+Conscent.Companion.logoutUser();
+
+======================End======================
