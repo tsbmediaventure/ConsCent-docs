@@ -26,7 +26,7 @@ This is a step by step guide to include Conscent Plugin in your app. This plugin
 To check if an article/content is free/paid or a payment needs to be done, in your class, use as below sample:
 Parameters detail can be checked below for more information.
 
-CCplugin.shared.showPayWall(contentID: contentID!, viewLayout: ViewLayoutInfo(vc: self, view: webView), delegate: self,,subscriberDelegate:CCPluginSubscribeBtnTapDelegate? = nil,signInDelegate:CCPluginSignBtnTapDelegate? = nil)
+CCplugin.shared.showPayWall(contentID: contentID!, viewLayout: ViewLayoutInfo(vc: self, view: webView), delegate: self,subscriberDelegate:CCPluginSubscribeBtnTapDelegate? = nil,signInDelegate:CCPluginSignBtnTapDelegate? = nil)
 
 Parameters detail:-
 
