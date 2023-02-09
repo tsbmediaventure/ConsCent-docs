@@ -12,7 +12,7 @@ This is a step by step guide to include Conscent Plugin in your app. This plugin
 
 1. First Import the Framework CCPlugin
 2. In your View Controller class, pass client_id and Environment Mode to be used in your app as below sample:
-   CCplugin.shared.configure(mode: .stage, clientID: clientID)
+   CCplugin.shared.configure(mode: .sandbox, clientID: clientID)
 3. Mode can be set as
    CCplugin.shared.mode.stage
    CCplugin.shared.mode.sandbox
