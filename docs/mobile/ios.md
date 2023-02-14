@@ -28,6 +28,9 @@ Parameters detail can be checked below for more information.
 
 CCplugin.shared.showPayWall(contentID: contentID!, viewLayout: ViewLayoutInfo(vc: self, view: webView), delegate: self,subscriberDelegate:CCPluginSubscribeBtnTapDelegate? = nil,signInDelegate:CCPluginSignBtnTapDelegate? = nil)
 
+CCplugin.shared.controller = self
+to add this for navigate the page for the plugin 
+
 Parameters detail:-
 
 - contentID: This will be your article or content id for which detail needs to be checked.
