@@ -44,6 +44,76 @@ Parameters detail:-
   CCplugin.shared.getUserDetail(contentID: contentID, completiondelegate: self)
 
 
+   var contentEmbeded = true
+    var showSubscriptionView = true
+    var isSubscriptionBtn: Bool?
+
+
+    this function call in a viewWillAppear for Default paywall and Embedded for Readnow, passes and Subscribtion. Check whether to show subscription or not.
+
+ private func configurePlugin() {
+        guard clientID != nil else{return}
+        CCplugin.shared.configure(mode: .sandbox, clientID: clientID!)
+        CCplugin.shared.debugMode = true
+        CCplugin.shared.controller = self
+        CCplugin.shared.accentColor = accentColor
+        
+        if isSubscriptionBtn == true {
+            if contentEmbeded == true {
+                if showSubscriptionView == true {
+                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self,subscriberDelegate: self,signInDelegate: self, showCrossButton: false)
+                }
+                else {
+                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self, showCrossButton: false)
+                }
+                
+            }
+            
+            //Check whether to show subscription or not
+            
+            else {
+                if showSubscriptionView == true {
+                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self,subscriberDelegate: self,signInDelegate: self, showCrossButton: false)
+                }
+                else{
+                    
+                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self, showCrossButton: false)
+                }
+            }
+        }
+        
+        
+        else {
+            if contentEmbeded == true {
+                for view in paywall.subviews {
+                    view.removeFromSuperview()
+                }
+                
+                if showSubscriptionView == true{
+                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self,subscriberDelegate: self,signInDelegate: self)
+                }
+                else{
+                    
+                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self)
+                }
+                
+            }
+            
+            //Check whether to show subscription or not
+            
+            else {
+                if showSubscriptionView == true {
+                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self,subscriberDelegate: self,signInDelegate: self)
+                }
+                else{
+                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self)
+                }
+            }
+        }
+    }
+
+
+
 ## Step-4 Final Touches
 
 In your Project go to your target and in the URL types add a new one
