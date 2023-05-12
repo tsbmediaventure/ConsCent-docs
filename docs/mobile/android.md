@@ -1,7 +1,7 @@
 ConsCent Plugin for developers
 ======================
 
-This is a step by step guide to include ConsCent Plugin in your app. This plugin is developed in Kotlin and supports both Java and Kotlin languages. 
+This is a step by step guide to include ConsCent Plugin in your app. This plugin is developed in Kotlin and supports both Java and Kotlin languages and supports `Api 23 (Android 6.0)` and above.. 
 
 ### Step-1
 Copy plugin's aar file to your libs folder and add it in your app level build gradle file.
