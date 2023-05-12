@@ -1,135 +1,103 @@
-# Conscent Plugin for developers
+ConsCent Plugin Integration Guide
+=================================
 
-This is a step by step guide to include Conscent Plugin in your app. This plugin is developed in Swift and supports IOS 13.0 and above.
+This guide provides step-by-step instructions on how to include the ConsCent Plugin in your iOS app. The ConsCent Plugin is developed in Swift and supports iOS 13.0 and above.
 
-## Step-1 Setup-1
+### Step 1: Integration Setup
 
-1.Drag the xcframework folder in the your projects under framework and add it to your project.(Please look at the readme section to see how to create a xcframework folder)
-2.Select your target and go into Frameworks,Libraries and Embeded Content section ,and in CCPlugin.xcframework change embed mode to embed and sign
-3.First Clean and then Build your project.
+#### Step 1.1: Adding the Plugin Framework
+1. Drag the CCPlugin.xcframework folder into your Xcode project.
+2. Select your app target and go to the "Frameworks, Libraries, and Embedded Content" section.
+3. Change the embed mode for CCPlugin.xcframework to "Embed & Sign".
+4. Clean and build your project to ensure the framework is properly integrated.
 
-## Step-2 Setup-2
 
-1. First Import the Framework CCPlugin
-2. In your View Controller class, pass client_id and Environment Mode to be used in your app as below sample:
-   CCplugin.shared.configure(mode: .sandbox, clientID: clientID)
-3. Mode can be set as
-   CCplugin.shared.mode.stage
-   CCplugin.shared.mode.sandbox
-   CCplugin.shared.mode.production
-   by Default the Mode is stage
-4. You can pass the accent color by using CCplugin.shared.accentColor and modify the accentColor in the paywall
-5. There is a also a property named debugMode CCplugin.shared.debugMode which can be set true or false to show toasts if the contentID or clientID entered is wrong it is only for development purposes
+### Step 2: Plugin Configuration
 
-## Step-3 Functions
+#### Step 2.1: Importing the Framework
+Import the CCPlugin framework into your ViewController class.
+~~~Swift
+import CCPlugin
+~~~~
 
+#### Step 2.2: Configuring the Plugin
+In your ViewController class, configure the plugin by providing the client ID and the desired environment mode.
+~~~Swift
+CCPlugin.shared.configure(mode: .sandbox, clientID: "your-client-id")
+~~~~
+
+Parameters:
+* contentID: This will be your article or content ID for which details need to be checked.
+* The mode parameter specifies the environment mode to be used in your app. You can choose one of the following modes:
+~~~
+Mode.stage (default)
+Mode.sandbox
+Mode.production
+~~~
+
+#### Step 2.3: Customizing Accent Color
+You can set the accent color for the paywall by accessing the accentColor property of the CCPlugin.shared instance and modifying its value.
+~~~Swift
+CCPlugin.shared.accentColor = UIColor.red
+~~~
+
+#### Step 2.4: Enabling Debug Mode
+The debugMode property of the CCPlugin.shared instance can be set to true or false to enable or disable debug mode. When debug mode is enabled, toasts will be shown if the content ID or client ID entered is incorrect. This is useful for development purposes.
+~~~Swift
+CCplugin.shared.debugMode = false
+CCplugin.shared.accentColor = accentColor
+~~~
+
+
+### Step 3: Functions
 To check if an article/content is free/paid or a payment needs to be done, in your class, use as below sample:
 Parameters detail can be checked below for more information.
 
-CCplugin.shared.showPayWall(contentID: contentID!, viewLayout: ViewLayoutInfo(vc: self, view: webView), delegate: self,subscriberDelegate:CCPluginSubscribeBtnTapDelegate? = nil,signInDelegate:CCPluginSignBtnTapDelegate? = nil)
+#### Step 3.1: PayWall Screen
+1. This step is for PayWall Screen
+~~~Swift
+CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: self.view), completiondelegate: self, subscriberDelegate: self, signInDelegate: self)
+~~~
 
-CCplugin.shared.controller = self
-to add this for navigate the page for the plugin 
+2. This step is for Subscription Screen
+~~~Swift
+CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: self.view), completiondelegate: self)
+~~~
 
-Parameters detail:-
-
-- contentID: This will be your article or content id for which detail needs to be checked.
-- ViewLayoutInfo : This is a struct which has 2 values vc and view , pass the view on which you are going to show your content and vc(View controller) in which the view is present
-- delegate: This will be used handle the success and failure cases , pass the class as the delegate where you want to handle success or Failure ,this delegate is of the protocol CCPluginCompletionHandlerDelegate which has 2 methods success and failure which will be triggered in case of success and failure of the process
-- success: This is the success callback which will get called for every successfull processing.The method success will be triggered in this case in your delegate class
-- failure: This is the failure callback which will get called for every failed processing. The method failure will be triggered in this case in the your delegate class
-- subscriberDelegate This is a optional callback which will be called if you pass your class as it's delegate ,It will be triggred When the subscription button is taped but if you don't pass in your delegate it will not show the subscription view
-- signInDelegate This is a optional callback which will be called if you pass your class as it's delegate ,It will be triggred When the signIn button is taped , but if you don't pass in your delegate it will not show the Signin view
-- UserDetailsDelegate:- to get user Details informations :-
-  CCplugin.shared.getUserDetail(contentID: contentID, completiondelegate: self)
-
-
-   var contentEmbeded = true
-    var showSubscriptionView = true
-    var isSubscriptionBtn: Bool?
+#### Parameters Details:
+* contentID: This will be your article or content ID for which details need to be checked.
+* ViewLayoutInfo: This is a struct that has two values, vc (View Controller) and view. Pass the view on which you are going to show your content and the View Controller in which the view is present.
+* delegate: This will be used to handle the success and failure cases. Pass the class as the delegate where you want to handle success or failure. This delegate is of the protocol CCPluginCompletionHandlerDelegate, which has two methods: success and failure that will be triggered in case of success and failure of the process.
+* success: This is the success callback that will be called for every successful processing. The success method will be triggered in the delegate class.
+* failure: This is the failure callback that will be called for every failed processing. The failure method will be triggered in the delegate class.
+* subscriberDelegate: This is an optional callback that will be called if you pass your class as its delegate. It will be triggered when the subscription button is tapped. If you don't pass it in your delegate, it will not show the subscription view.
+* signInDelegate: This is an optional callback that will be called if you pass your class as its delegate. It will be triggered when the sign-in button is tapped. If you don't pass it in your delegate, it will not show the sign-in view. 
 
 
-    this function call in a viewWillAppear for Default paywall and Embedded for Readnow, passes and Subscribtion. Check whether to show subscription or not.
-
- private func configurePlugin() {
-        guard clientID != nil else{return}
-        CCplugin.shared.configure(mode: .sandbox, clientID: clientID!)
-        CCplugin.shared.debugMode = true
-        CCplugin.shared.controller = self
-        CCplugin.shared.accentColor = accentColor
-        
-        if isSubscriptionBtn == true {
-            if contentEmbeded == true {
-                if showSubscriptionView == true {
-                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self,subscriberDelegate: self,signInDelegate: self, showCrossButton: false)
-                }
-                else {
-                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self, showCrossButton: false)
-                }
-                
-            }
-            
-            //Check whether to show subscription or not
-            
-            else {
-                if showSubscriptionView == true {
-                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self,subscriberDelegate: self,signInDelegate: self, showCrossButton: false)
-                }
-                else{
-                    
-                    CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self, showCrossButton: false)
-                }
-            }
-        }
-        
-        
-        else {
-            if contentEmbeded == true {
-                for view in paywall.subviews {
-                    view.removeFromSuperview()
-                }
-                
-                if showSubscriptionView == true{
-                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self,subscriberDelegate: self,signInDelegate: self)
-                }
-                else{
-                    
-                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: paywall), completiondelegate: self)
-                }
-                
-            }
-            
-            //Check whether to show subscription or not
-            
-            else {
-                if showSubscriptionView == true {
-                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self,subscriberDelegate: self,signInDelegate: self)
-                }
-                else{
-                    CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: view), completiondelegate: self)
-                }
-            }
-        }
+### Step 4: Final Touches
+* In your Project go to your target and in the URL types add a new one with URL schemes "conscent".
+* This is important to handle redirection or app launches from the browser.
+* call below function inside of `openURLContexts` scene delegate.
+~~~Swift
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    if let url = URLContexts.first?.url {
+       CCplugin.shared.handleRelaunchApp(url: url)
     }
+}
+~~~
 
 
-
-## Step-4 Final Touches
-
-In your Project go to your target and in the URL types add a new one
-with URL schemes "conscent"
-This is important to handle redirection or app launches from the browser
-Then in the Scene delegate add the function
-func scene(\_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
-add call this function CCplugin.shared.handleRelaunchApp(url: url)
-
-## Step-5 Important Points
-
-1. Keep in mind there is only instance of the CCPlugin so a new function call will override the last function call
-2. Please show or load your content only after the success callback to aviod showing paid content for free in case of server or internet issue
+### Step 5: Important Points
+1. Keep in mind there is only instance of the `CCPlugin`. So a new function call will override the last function call.
+2. Please show or load your content only after the success callback to avoid showing paid content for free in case of server or internet issue.
 3. Don't forget step 4 otherwise you will have to refresh the content screen everytime you make a payment for a paid content
-4. The blocker View supports both potrait and landscape orientation
-5. Make sure the height of the paywall view is more than 600 in potrait and 336 in landscape to avoid any view obstruction , alternatively if you're not passing the subscriber view you can have the paywall height of 313 in potrait , 336 in landscape
+4. The blocker View supports both portrait and landscape orientation
+5. Make sure the height of the paywall view is more than 600 in portrait and 336 in landscape to avoid any view obstruction, alternatively if you're not passing the subscriber view you can have the paywall height of 313 in portrait, 336 in landscape
 6. If you don't have a valid session ID the logIn with Conscent button will not show
 7. if you have valid session you will se the user's account balance in the paywall
-8. The view automatically centres all of it's content so it's fine if you don't want the subscription view
+8. The view automatically center all of its content so it's fine if you don't want the subscription view
+
+
+Please look at the Sample Project for more Details
+
+
