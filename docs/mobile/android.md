@@ -29,6 +29,8 @@ implementation 'androidx.browser:browser:(insert latest version)'
 ~~~
 implementation 'androidx.browser:browser:1.3.0'
 ~~~
+`Let us know the version of your browser, kotlinx-coroutines-android `
+
 Note: 
 1. In case of error for Kotlin not enabled, please enable Kotlin for project.
 2. In case of error in Manifest merging, please merge Manifest as per Android Studio support or include line tools:replace="android:icon,android:roundIcon" inside your application tag in Android Manifest file.
