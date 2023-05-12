@@ -35,7 +35,7 @@ Note:
 1. In case of error for Kotlin not enabled, please enable Kotlin for project.
 2. In case of error in Manifest merging, please merge Manifest as per Android Studio support or include line tools:replace="android:icon,android:roundIcon" inside your application tag in Android Manifest file.
 
-## Step-3
+### Step-3
 In your application (recommended) or root activity class's onCreate, pass applicationContext, yourClientId, accentColor, Environment Mode and App Mode to be used in your app as below sample:
 ConscentWrapper.configure(yourApplicationContext, yourClientId, yourAccentColor, MODE, APP_MODE)
 Remember to set configuration before you call further callbacks.
@@ -63,7 +63,7 @@ You can later change your clientId also, by calling the following function:
 
 ConscentWrapper.changeClientId(yourClientId), throws "Configure ConscentWrapper first!" if not configured already!
 
-## Step-4
+### Step-4
 Create an instance of the ConsCent class for each unique contentId (recommended) for more control over your content flow. Use the below described method:
 
 *Kotlin
@@ -90,7 +90,7 @@ Conscent instance = ConscentWrapper.Companion.getConscentInstance(
 
 *All parameter details are given at the bottom.
 
-## Step-5
+### Step-5
 To check if an article/content is free/paid or a payment needs to be done, in your class, use as below sample:
 Parameters detail can be checked below for more information.
 
@@ -158,7 +158,7 @@ for eg:
 * canSubscribe (`Boolean` - Optional):  Pass this as "true" to show subscribe layout else "false".
 * showClose (`Boolean` - Optional):  Pass this as "true" to show close button on the paywall/subscriptions, default value is `"false"`.
 
-## Step-6
+### Step-6
 In you onActivityResult method, pass below line of code:
 instance.handledIntent()
 
