@@ -142,7 +142,7 @@ for eg:
 <FrameLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 ~~~
   Eg: Color.parseColor("#0087ca") or ContextCompat.getColor(context, color_from_colors.xml) like ContextCompat.getColor(this, R.color.red)
 * contentId (String): This will be your article or content id for which detail needs to be checked.
