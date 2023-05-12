@@ -12,9 +12,11 @@ In your application build.gradle file, include dependency as below with latest v
 * Retrofit and GSON converter
 implementation 'com.squareup.retrofit2:retrofit:(insert latest version)'
 implementation 'com.squareup.retrofit2:converter-gson:(insert latest version)'
-Example:
+ * Example:
+~~~
 implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+~~~
 
 * Coroutines
 implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:(insert latest version)'
@@ -23,9 +25,10 @@ implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
 
 * Browser
 implementation 'androidx.browser:browser:(insert latest version)'
-Example:
+* Example:
+~~~
 implementation 'androidx.browser:browser:1.3.0'
-
+~~~
 Note: 
 1. In case of error for Kotlin not enabled, please enable Kotlin for project.
 2. In case of error in Manifest merging, please merge Manifest as per Android Studio support or include line tools:replace="android:icon,android:roundIcon" inside your application tag in Android Manifest file.
@@ -38,10 +41,12 @@ Remember to set configuration before you call further callbacks.
 1. yourApplicationContext: Pass your application context here.
 2. yourClientId: Pass your clientId received from Conscent.
 3. yourAccentColor: Pass your accentColor for the app.
-4. Mode can be set as 
-ConscentConfiguration.MODE.STAGE,
-ConscentConfiguration.MODE.SANDBOX and
+4. Mode can be set as :
+~~~
+ConscentConfiguration.MODE.STAGE
+ConscentConfiguration.MODE.SANDBOX
 ConscentConfiguration.MODE.PRODUCTION
+~~~
 
 Mode is used for configuration testing of different environments available.
 
@@ -138,18 +143,18 @@ for eg:
         android:layout_height="wrap_content" />
 ~~~
   Eg: Color.parseColor("#0087ca") or ContextCompat.getColor(context, color_from_colors.xml) like ContextCompat.getColor(this, R.color.red)
-* contentTd (String): This will be your article or content id for which detail needs to be checked.
-* onConscentListener (OnConscentListener): You can pass a listener which will get called after success or failure in processing. If you pass a listener, after successful processing, the success reference will be called and for failed event, failure event will be called. You can implement OnConscentListener in your activity and then pass it as a reference.
-  * onSuccess: This is the success callback which will get called for every successful processing. You can pass your method as a reference or an lambda expression which will get called in case of success.
-  * onError: This is optional. You can pass it as null. This is the failure callback which will get called for every failed processing. You can pass your method as a reference or an lambda expression and it'll get called for failed cases. You can implement your code in it for failed cases.
-  * onSubscribe: This is optional callback. If you want to inflate subscribe layout, pass a subscribe function which will be called when subscribe button will be clicked inside payment flow. Passing null will not inflate subscribe layout.
-  * onBuyPass: This is optional callback. It will be called when buy-pass button will be clicked inside payment flow.
-  * onSignIn: This is the callback function which will be called when a user click on signIn button in payment flow. This will be only visible if subscribe layout has been inflated.
-  * onAdFree: This is the callback function which will be called when a user click on adfree subscription.
-* yourContentTitle (String - Optional): Type string, title of the content for display purposes.
-* yourSubsUrl (String - Optional): Type string, url to be used when subscribe button is clicked.
-* canSubscribe (Boolean - Optional): Type boolean, pass this as "true" to show subscribe layout else "false".
-* showClose (Boolean - Optional): Type boolean, pass this as "true" to show close button on the paywall/subscriptions, default is "false".
+* contentId (String): This will be your article or content id for which detail needs to be checked.
+* OnConscentListener : You can pass a listener which will get called after success or failure in processing. If you pass a listener, after successful processing, the success reference will be called and for failed event, failure event will be called. You can implement OnConscentListener in your activity and then pass it as a reference.
+  * onSuccess: This is the success callback which will get called for every successful processing. You can pass your method as a reference or a lambda expression which will get called in case of success.
+  * onError: This is optional. You can pass it as null. This is the failure callback which will get called for every failed processing. You can pass your method as a reference or a lambda expression and it'll get called for failed cases. You can implement your code in it for failed cases.
+  * onSubscribe: This is optional callback. If you want to inflate subscribe layout, pass a subscribe function which will be called when subscribe button will be clicked inside the payment flow. Passing null will not inflate subscribe layout.
+  * onBuyPass: This is optional callback. It will be called when buy-pass button will be clicked inside the payment flow.
+  * onSignIn: This is the callback function which will be called when a user clicks on signIn button in payment flow. This will be only visible if subscribe layout has been inflated.
+  * onAdFree: This is the callback function which will be called when a user clicks on adfree subscription.
+* yourContentTitle (`String` - Optional): Title of the content for display purposes.
+* yourSubsUrl (`String` - Optional):  Url to be used when subscribe button is clicked.
+* canSubscribe (`Boolean` - Optional):  Pass this as "true" to show subscribe layout else "false".
+* showClose (`Boolean` - Optional):  Pass this as "true" to show close button on the paywall/subscriptions, default value is `"false"`.
 
 ## Step-6
 In you onActivityResult method, pass below line of code:
