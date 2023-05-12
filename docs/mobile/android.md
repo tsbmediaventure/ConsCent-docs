@@ -56,7 +56,7 @@ Mode is used for configuration testing of different environments available.
 `ConsCentConfiguration.APP_MODE.DEBUG`
 `ConsCentConfiguration.APP_MODE.PROD`
 
-APP_MODE is basically used for checking debug and production environment of app. If APP_MODE is debug, then all errors will be shown as Toast messages and Logs. If APP_MODE is PROD, only logs will be available for critical errors like Network unavailability, wrong client_id and wrong content_id.
+APP_MODE is basically used for checking debug and production environment of app. If APP_MODE is `DEBUG` , then all errors will be shown as Toast messages and Logs. If APP_MODE is `PROD`, only logs will be available for critical errors like Network unavailability, wrong client_id and wrong content_id.
 
 You can later change your clientId also, by calling the following function:
 
