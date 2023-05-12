@@ -51,8 +51,8 @@ ConscentConfiguration.MODE.PRODUCTION
 Mode is used for configuration testing of different environments available.
 
 5. APP_MODE can be set as 
-ConsCentConfiguration.APP_MODE.DEBUG
-ConsCentConfiguration.APP_MODE.PROD
+`ConsCentConfiguration.APP_MODE.DEBUG`
+`ConsCentConfiguration.APP_MODE.PROD`
 
 APP_MODE is basically used for checking debug and production environment of app. If APP_MODE is debug, then all errors will be shown as Toast messages and Logs. If APP_MODE is PROD, only logs will be available for critical errors like Network unavailability, wrong client_id and wrong content_id.
 
@@ -205,4 +205,3 @@ ConscentWrapper.INSTANCE?.logoutUser()
 ~~~java
 ConscentWrapper.Companion.INSTANCE?.logoutUser();
 ~~~
-======================End======================
