@@ -37,6 +37,7 @@ Mode.production
 
 #### Step 2.3: Customizing Accent Color
 You can set the accent color for the paywall by accessing the accentColor property of the CCPlugin.shared instance and modifying its value.
+##### Refer below example for setting color.
 ~~~Swift
 CCPlugin.shared.accentColor = UIColor.red
 ~~~
@@ -45,7 +46,6 @@ CCPlugin.shared.accentColor = UIColor.red
 The debugMode property of the CCPlugin.shared instance can be set to true or false to enable or disable debug mode. When debug mode is enabled, toasts will be shown if the content ID or client ID entered is incorrect. This is useful for development purposes.
 ~~~Swift
 CCplugin.shared.debugMode = false
-CCplugin.shared.accentColor = accentColor
 ~~~
 
 
@@ -59,7 +59,7 @@ Parameters detail can be checked below for more information.
 CCplugin.shared.showPayWall(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: self.view), completiondelegate: self, subscriberDelegate: self, signInDelegate: self)
 ~~~
 
-2. This step is for Subscription Screen
+2. This step is for Embedded Subscription Screen
 ~~~Swift
 CCplugin.shared.initSubscriptions(contentID: contentID, viewLayout: ViewLayoutInfo(vc: self, view: self.view), completiondelegate: self)
 ~~~
@@ -94,7 +94,7 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 4. The blocker View supports both portrait and landscape orientation
 5. Make sure the height of the paywall view is more than 600 in portrait and 336 in landscape to avoid any view obstruction, alternatively if you're not passing the subscriber view you can have the paywall height of 313 in portrait, 336 in landscape
 6. If you don't have a valid session ID the logIn with Conscent button will not show
-7. if you have valid session you will se the user's account balance in the paywall
+7. If you have valid session you will see the user's account balance in the paywall
 8. The view automatically center all of its content so it's fine if you don't want the subscription view
 
 
