@@ -4,6 +4,10 @@
 
 You can register your webhook endpoint for receiving ConsCent user data by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user data anytime the user logins in for the first time on the client's website or application via ConsCent.
 
+### Description
+
+This event occurs when the user logs in to the platform very first time.
+
 #### Security
 
 You will either get the user's email or phoneNumber field and accordingly only one of hashedPhoneNumber or hashedEmail.
@@ -53,6 +57,10 @@ Do note that you will receive either the phoneNumber or the email depending on w
 
 You can register your webhook endpoint for receiving ConsCent user data by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user data (name, email, phone number, hashed email & phone number, city, location, address & country of the user) anytime the user logins in on the client's website or application via ConsCent.
 
+### Description
+
+This event occurs when the user logs in to the platform everytime.
+
 #### Security
 
 You will either get the user's email or phoneNumber field and accordingly only one of hashedPhoneNumber or hashedEmail.
@@ -101,6 +109,10 @@ Alternately, you can check the authorization headers. Every request to the webho
 ## Subscription Payment Webhook
 
 You can register your webhook endpoint for receiving ConsCent purchased subscription data by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's purchased subscription data anytime the user purchases a subscription on the client's platform or application via ConsCent. Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint.
+
+### Description
+
+This event occurs whenever the user buys any subscription.
 
 > The webhook returns a JSON in the request body - structured like this:
 
@@ -199,6 +211,10 @@ You can register your webhook endpoint for receiving ConsCent purchased subscrip
 ## Subscription Cancelled Webhook
 
 You can register your webhook endpoint for receiving data whenever a user cancels their subscription via ConsCent - by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's cancelled subscription data, along with the details of the subscription and the last purchase/renewal of the user for the particular subscription - anytime the user cancels a client's subscription via ConsCent. Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint.
+
+### Description
+
+This event occurs whenever the user cancels the auto renew enabled subscription from ConsCent Dashboard.
 
 > The webhook returns a JSON in the request body - structured like this:
 
@@ -319,6 +335,10 @@ You can register your webhook endpoint for receiving data whenever a user cancel
 
 You can register your webhook endpoint for receiving data whenever a user pays for their pass via ConsCent - by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's pass payment data, along with the details of the pass and the last purchase/renewal of the user for the particular pass - anytime the user purchases a client's pass via ConsCent. Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint.
 
+### Descrption:
+
+This event occurs when the user buys the Pass.
+
 > The webhook returns a JSON in the request body - structured like this:
 
 ```json
@@ -389,50 +409,149 @@ You can register your webhook endpoint for receiving data whenever a user pays f
 
 You can register your webhook endpoint for receiving data whenever a user pays for their subscription bundle via ConsCent - by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's subscription bundle payment data, along with the details of the bundle - anytime the user purchases a client's subscription bundle via ConsCent. Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint.
 
+### Description
+
+This event occurs when the user buys bundle subscription.
+
 > The webhook returns a JSON in the request body - structured like this:
 
 ```json
 {
-  "purchaseId": "62d02f1bf3299d7b21d4a235",
-  "userId": "623b1204ff6e065272e3530b",
-  "userEmail": "asd@asd.com",
-  "userPhoneNumber": "9876543211",
-  "userName": "asdasdasd",
+  "purchaseId": "6345155cb9beaf3033c0683c",
+  "userId": "6345153cb9beaf3033c06838",
+  "userEmail": "test@seed.com",
+  "userPhoneNumber": "9872983759",
+  "userName": "Test Name",
   "userAddress": {
-    "state": "SIKKIM",
-    "city": "asdsa",
-    "area": "asdasdasdas",
-    "pincode": "110089"
+    "apartment": "Test Address",
+    "pincode": "111111",
+    "city": "Test City",
+    "country": "India",
+    "state": "Test State"
   },
   "userGender": "MALE",
   "userEmploymentType": "FULL_TIME",
   "utmParameters": {
-    "utm_source": "KJ007",
-    "utm_medium": "medium",
-    "utm_name": "name"
+    "utm_source": "6969"
   },
-  "bundleBuyingPrice": 332,
-  "bundlePrice": 369,
-  "bundlePriceDetails": { "price": 369, "currency": "INR" },
+  "bundleBuyingPrice": 2347.45,
+  "bundlePrice": 2471,
+  "bundleGstComponents": {
+    "physical": 940.96,
+    "digital": 1530.04
+  },
+  "bundleInrGstComponets": {
+    "physical": 940.96,
+    "digital": 1530.04
+  },
+  "bundlePriceDetails": {
+    "price": 2471,
+    "currency": "INR"
+  },
   "subscriptionsDetail": [
     {
+      "physical": false,
+      "digital": true,
+      "adFree": false,
       "title": "Digital",
-      "duration": 1,
+      "duration": 12,
       "currencySymbol": "₹",
-      "buyingPrice": 90.00,
-      "price": "100.00",
-      "clientName": "Test Client TSB media venture a",
-      "currency": "INR"
+      "buyingPrice": 190.95,
+      "price": "201.00",
+      "clientName": "Demo Client",
+      "currency": "INR",
+      "expiryDate": "2023-10-11T07:03:56.632Z",
+      "purchaseDate": "2022-10-11T07:03:56.632Z"
     },
     {
-      "title": "Digital",
-      "duration": 19,
+      "physical": true,
+      "digital": true,
+      "adFree": false,
+      "title": "Physical-Digital ",
+      "duration": 1,
       "currencySymbol": "₹",
-      "buyingPrice": 242.10,
-      "price": "269.00",
+      "buyingPrice": 950.95,
+      "price": "1001.00",
+      "clientName": "Outlook New",
+      "currency": "INR",
+      "gstComponents": {
+        "physical": 853.98,
+        "digital": 147.01999999999998
+      },
+      "inrGstComponents": {
+        "physical": 853.98,
+        "digital": 147.01999999999998
+      },
+      "expiryDate": "2022-11-11T07:03:56.652Z",
+      "purchaseDate": "2022-10-11T07:03:56.652Z"
+    },
+    {
+      "physical": true,
+      "digital": true,
+      "adFree": true,
+      "title": "Didi+Phy+Ad Free",
+      "duration": 1,
+      "currencySymbol": "₹",
+      "buyingPrice": 1205.55,
+      "price": "1269.00",
       "clientName": "Test client b",
-      "currency": "INR"
+      "currency": "INR",
+      "gstComponents": {
+        "physical": 86.98,
+        "digital": 1182.02
+      },
+      "inrGstComponents": {
+        "physical": 86.98,
+        "digital": 1182.02
+      },
+      "expiryDate": "2022-11-11T07:03:56.667Z",
+      "purchaseDate": "2022-10-11T07:03:56.667Z"
     }
-  ]
+  ],
+  "createdAt": "2022-10-11T07:03:56.672Z",
+  "updatedAt": "2022-10-11T07:03:56.672Z"
 }
 ```
+
+## Review Subscription Webhook
+
+You can register your webhook endpoint for receiving ConsCent review subscription data i.e.(dropoff users) by logging in to your ConsCent Client Dashboard and navigating to the [Webhook Page](https://client.conscent.in/dashboard/webhook). You will be able to enable/disable and edit your webhook url from this section. Once the webhook URL is registered and the webhook is in the enabled state - the endpoint will recieve user's review subscription data, anytime the user makes the payment for buying a subscription and comes to the review page on the client's platform or application via ConsCent.The review subscription webhook lets us keep the records of drop off users.Moreover, the webhook is secured by basic auth using the Clients API Key and API Secret provided by ConsCent on the SDK Integration section of the client dashboard - [ConsCent Client Integration](https://client.conscent.in/dashboard/integration). You can optionally choose to keep the endpoint as protected and authenticate using the provided credentials which are passed in the headers of the POST request to the configured webhook endpoint.
+
+### Description
+
+This event occurs just before the user confirms the payment for buying a subscription on the review page.
+
+>The webhook returns a JSON in the request body - structured like this:
+
+```json{
+   "phoneNumber": "9847598673",
+  "userId": "6345116cb9beaf3033c065cc",
+  "country": "IN",
+  "hashedPhoneNumber": "eyJhbGciOiJIUzI1NiJ9.OTg0NzU5ODY3Mw.7tvT8abeu_sGEWSfKdgYRRo7oZ65qBwatyFIF1VOhGY",
+  "address": {
+    "apartment": "",
+    "area": "",
+    "pincode": "",
+    "landmark": "",
+    "city": "",
+    "state": "",
+    "country": ""
+  },
+  "name": "",
+  "city": "defence colony",
+  "location": {
+    "latitude": 28.5714,
+    "longitude": 77.2327
+  },
+  "browser": "Chrome",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36",
+  "os": "Mac OS",
+  "username": "9847598673",
+  "subscriptionDetails": {
+    "subscriptionId": "61e951161a563d0729652d21",
+    "tierId": "61e951161a563d0729652d23",
+    "title": "AD Free",
+    "price": 600,
+    "currency": "INR"
+  }
+}
